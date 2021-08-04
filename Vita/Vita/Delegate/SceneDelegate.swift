@@ -8,7 +8,10 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
     var window: UIWindow?
+    // swiftlint:disable weak_delegate
+    var splitViewDelegate = SplitViewDelegate()
 
     func scene(_ scene: UIScene,
                willConnectTo _: UISceneSession,
@@ -19,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // attached to the scene.
         // This delegate does not imply the connecting scene or session are new
         // (see `application:configurationForConnectingSceneSession` instead).
+        configureSplitViewController()
         // swiftlint:disable unused_optional_binding
         guard let _ = (scene as? UIWindowScene) else { return }
     }
@@ -58,5 +62,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Save changes in the application's managed object context when the application
         // transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+    }
+}
+
+extension SceneDelegate {
+    private func configureSplitViewController() {
+        guard
+            let window = window,
+            let splitViewController = window.rootViewController as? UISplitViewController
+        else {
+            fatalError()
+        }
+
+        splitViewController.delegate = splitViewDelegate
     }
 }

@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Entry" representedClassName=".Entry" syncable="YES" codeGenerationType="category">
+        <attribute name="created" attributeType="Date" defaultDateTimeInterval="649310400" usesScalarValueType="NO"/>
+        <attribute name="date" attributeType="Date" defaultDateTimeInterval="649310400" usesScalarValueType="NO"/>
+        <attribute name="duration" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="lastEdit" attributeType="Date" defaultDateTimeInterval="649310400" usesScalarValueType="NO"/>
+        <attribute name="lastView" attributeType="Date" defaultDateTimeInterval="649310400" usesScalarValueType="NO"/>
+        <attribute name="text" attributeType="String" defaultValueString=""/>
+        <relationship name="journal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Journal" inverseName="entries" inverseEntity="Journal"/>
+    </entity>
+    <entity name="Journal" representedClassName=".Journal" syncable="YES" codeGenerationType="category">
+        <attribute name="created" attributeType="Date" defaultDateTimeInterval="649310400" usesScalarValueType="NO"/>
+        <attribute name="lastEdit" attributeType="Date" defaultDateTimeInterval="649310400" usesScalarValueType="NO"/>
+        <attribute name="lastView" attributeType="Date" defaultDateTimeInterval="649310400" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String" defaultValueString="Unititled"/>
+        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Entry" inverseName="journal" inverseEntity="Entry"/>
+    </entity>
+    <elements>
+        <element name="Journal" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="Entry" positionX="-54" positionY="27" width="128" height="134"/>
+    </elements>
 </model>

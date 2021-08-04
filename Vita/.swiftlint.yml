@@ -31,3 +31,6 @@ function_body_length:
 line_length:
   warning: 100
   error: 150
+
+identifier_name:
+  min_length: 0

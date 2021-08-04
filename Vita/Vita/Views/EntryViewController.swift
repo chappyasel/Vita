@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EntryViewController.swift
 //  Vita
 //
 //  Created by Chappy Asel on 7/30/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

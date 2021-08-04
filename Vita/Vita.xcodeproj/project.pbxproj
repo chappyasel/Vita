@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		500E981D26B4423100D6F554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E981C26B4423100D6F554 /* AppDelegate.swift */; };
 		500E981F26B4423100D6F554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E981E26B4423100D6F554 /* SceneDelegate.swift */; };
-		500E982126B4423100D6F554 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E982026B4423100D6F554 /* ViewController.swift */; };
+		500E982126B4423100D6F554 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E982026B4423100D6F554 /* EntryViewController.swift */; };
 		500E982426B4423100D6F554 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 500E982226B4423100D6F554 /* Main.storyboard */; };
 		500E982726B4423100D6F554 /* Vita.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 500E982526B4423100D6F554 /* Vita.xcdatamodeld */; };
 		500E982926B4423300D6F554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 500E982826B4423300D6F554 /* Assets.xcassets */; };
 		500E982C26B4423300D6F554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 500E982A26B4423300D6F554 /* LaunchScreen.storyboard */; };
 		500E983626B443C000D6F554 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500E983526B443C000D6F554 /* CloudKit.framework */; };
+		5070D93A26BAD6C100AC798F /* SplitViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D93926BAD6C100AC798F /* SplitViewDelegate.swift */; };
+		5070D93C26BADCD300AC798F /* EntryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D93B26BADCD300AC798F /* EntryListViewController.swift */; };
+		5070D93F26BAE7A800AC798F /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D93E26BAE7A800AC798F /* Entry+CoreDataClass.swift */; };
+		5070D94126BAE7DA00AC798F /* Journal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D94026BAE7DA00AC798F /* Journal+CoreDataClass.swift */; };
+		5070D94426BAE94B00AC798F /* CodableManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D94326BAE94B00AC798F /* CodableManagedObject.swift */; };
 		C19E6025A1BD0420235687B6 /* Pods_Vita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818D395F840B700525E7518 /* Pods_Vita.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +28,7 @@
 		500E981926B4423100D6F554 /* Vita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		500E981C26B4423100D6F554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		500E981E26B4423100D6F554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		500E982026B4423100D6F554 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		500E982026B4423100D6F554 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		500E982326B4423100D6F554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		500E982626B4423100D6F554 /* Vita.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vita.xcdatamodel; sourceTree = "<group>"; };
 		500E982826B4423300D6F554 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,6 +36,11 @@
 		500E982D26B4423300D6F554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		500E983326B4424400D6F554 /* Vita.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vita.entitlements; sourceTree = "<group>"; };
 		500E983526B443C000D6F554 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		5070D93926BAD6C100AC798F /* SplitViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewDelegate.swift; sourceTree = "<group>"; };
+		5070D93B26BADCD300AC798F /* EntryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListViewController.swift; sourceTree = "<group>"; };
+		5070D93E26BAE7A800AC798F /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5070D94026BAE7DA00AC798F /* Journal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5070D94326BAE94B00AC798F /* CodableManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableManagedObject.swift; sourceTree = "<group>"; };
 		5449B1649E8E0D82D2ABDF43 /* Pods-Vita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.debug.xcconfig"; sourceTree = "<group>"; };
 		6164B53D513D8D9E98A76E3C /* Pods-Vita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +79,7 @@
 		500E981B26B4423100D6F554 /* Vita */ = {
 			isa = PBXGroup;
 			children = (
+				5070D93D26BAE71E00AC798F /* Model */,
 				500E983826B4467700D6F554 /* Views */,
 				500E983926B4468B00D6F554 /* Delegate */,
 				500E983726B4464B00D6F554 /* Supporting Files */,
@@ -101,7 +112,8 @@
 		500E983826B4467700D6F554 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				500E982026B4423100D6F554 /* ViewController.swift */,
+				5070D93B26BADCD300AC798F /* EntryListViewController.swift */,
+				500E982026B4423100D6F554 /* EntryViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,8 +123,27 @@
 			children = (
 				500E981C26B4423100D6F554 /* AppDelegate.swift */,
 				500E981E26B4423100D6F554 /* SceneDelegate.swift */,
+				5070D93926BAD6C100AC798F /* SplitViewDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		5070D93D26BAE71E00AC798F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5070D93E26BAE7A800AC798F /* Entry+CoreDataClass.swift */,
+				5070D94026BAE7DA00AC798F /* Journal+CoreDataClass.swift */,
+				5070D94226BAE93B00AC798F /* Extensions */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5070D94226BAE93B00AC798F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5070D94326BAE94B00AC798F /* CodableManagedObject.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		959AA28900962660270B5D25 /* Pods */ = {
@@ -238,10 +269,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				500E982126B4423100D6F554 /* ViewController.swift in Sources */,
+				500E982126B4423100D6F554 /* EntryViewController.swift in Sources */,
+				5070D93A26BAD6C100AC798F /* SplitViewDelegate.swift in Sources */,
+				5070D93F26BAE7A800AC798F /* Entry+CoreDataClass.swift in Sources */,
 				500E982726B4423100D6F554 /* Vita.xcdatamodeld in Sources */,
 				500E981D26B4423100D6F554 /* AppDelegate.swift in Sources */,
+				5070D94426BAE94B00AC798F /* CodableManagedObject.swift in Sources */,
+				5070D94126BAE7DA00AC798F /* Journal+CoreDataClass.swift in Sources */,
 				500E981F26B4423100D6F554 /* SceneDelegate.swift in Sources */,
+				5070D93C26BADCD300AC798F /* EntryListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,17 +429,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q82S7VERUD;
 				INFOPLIST_FILE = "Vita/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chappyasel.vita;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -417,17 +453,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q82S7VERUD;
 				INFOPLIST_FILE = "Vita/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chappyasel.vita;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
