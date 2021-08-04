@@ -15,9 +15,11 @@
 		500E982926B4423300D6F554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 500E982826B4423300D6F554 /* Assets.xcassets */; };
 		500E982C26B4423300D6F554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 500E982A26B4423300D6F554 /* LaunchScreen.storyboard */; };
 		500E983626B443C000D6F554 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500E983526B443C000D6F554 /* CloudKit.framework */; };
+		C19E6025A1BD0420235687B6 /* Pods_Vita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818D395F840B700525E7518 /* Pods_Vita.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2818D395F840B700525E7518 /* Pods_Vita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		500E981926B4423100D6F554 /* Vita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		500E981C26B4423100D6F554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		500E981E26B4423100D6F554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +31,8 @@
 		500E982D26B4423300D6F554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		500E983326B4424400D6F554 /* Vita.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vita.entitlements; sourceTree = "<group>"; };
 		500E983526B443C000D6F554 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		5449B1649E8E0D82D2ABDF43 /* Pods-Vita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.debug.xcconfig"; sourceTree = "<group>"; };
+		6164B53D513D8D9E98A76E3C /* Pods-Vita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				500E983626B443C000D6F554 /* CloudKit.framework in Frameworks */,
+				C19E6025A1BD0420235687B6 /* Pods_Vita.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,6 +54,7 @@
 				500E981B26B4423100D6F554 /* Vita */,
 				500E981A26B4423100D6F554 /* Products */,
 				500E983426B443C000D6F554 /* Frameworks */,
+				959AA28900962660270B5D25 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				500E983526B443C000D6F554 /* CloudKit.framework */,
+				2818D395F840B700525E7518 /* Pods_Vita.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -108,6 +115,15 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
+		959AA28900962660270B5D25 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5449B1649E8E0D82D2ABDF43 /* Pods-Vita.debug.xcconfig */,
+				6164B53D513D8D9E98A76E3C /* Pods-Vita.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,6 +131,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 500E983026B4423300D6F554 /* Build configuration list for PBXNativeTarget "Vita" */;
 			buildPhases = (
+				533D86908CF8074F8E3846C0 /* [CP] Check Pods Manifest.lock */,
+				5070D93826BA3EDB00AC798F /* ShellScript */,
 				500E981526B4423100D6F554 /* Sources */,
 				500E981626B4423100D6F554 /* Frameworks */,
 				500E981726B4423100D6F554 /* Resources */,
@@ -172,6 +190,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5070D93826BA3EDB00AC798F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		533D86908CF8074F8E3846C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Vita-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		500E981526B4423100D6F554 /* Sources */ = {
@@ -325,13 +385,14 @@
 		};
 		500E983126B4423300D6F554 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5449B1649E8E0D82D2ABDF43 /* Pods-Vita.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Vita/Vita.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Vita/Supporting Files/Vita.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q82S7VERUD;
-				INFOPLIST_FILE = Vita/Info.plist;
+				INFOPLIST_FILE = "Vita/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -348,13 +409,14 @@
 		};
 		500E983226B4423300D6F554 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6164B53D513D8D9E98A76E3C /* Pods-Vita.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Vita/Vita.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Vita/Supporting Files/Vita.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q82S7VERUD;
-				INFOPLIST_FILE = Vita/Info.plist;
+				INFOPLIST_FILE = "Vita/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (

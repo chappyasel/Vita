@@ -1,0 +1,6 @@
+framework module Pods_Vita {
+  umbrella header "Pods-Vita-umbrella.h"
+
+  export *
+  module * { export * }
+}
