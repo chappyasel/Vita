@@ -16,12 +16,11 @@ enum DecoderConfigurationError: Error {
   case missingManagedObjectContext
 }
 
-class VitaDecoder: JSONDecoder {
+class VJSONDecoder: JSONDecoder {
     override init() {
         super.init()
-        // swiftlint:disable force_cast
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.userInfo[CodingUserInfoKey.managedObjectContext] =
-            appDelegate.persistentContainer.viewContext
+            VCoreData.shared.persistentContainer.viewContext
+        self.dateDecodingStrategy = .iso8601
     }
 }

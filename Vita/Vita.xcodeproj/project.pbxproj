@@ -20,6 +20,8 @@
 		5070D93F26BAE7A800AC798F /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D93E26BAE7A800AC798F /* Entry+CoreDataClass.swift */; };
 		5070D94126BAE7DA00AC798F /* Journal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D94026BAE7DA00AC798F /* Journal+CoreDataClass.swift */; };
 		5070D94426BAE94B00AC798F /* CodableManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D94326BAE94B00AC798F /* CodableManagedObject.swift */; };
+		5070D94826BB18E000AC798F /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5070D94726BB18E000AC798F /* testData.json */; };
+		5070D94A26BB212D00AC798F /* VCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D94926BB212D00AC798F /* VCoreData.swift */; };
 		C19E6025A1BD0420235687B6 /* Pods_Vita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818D395F840B700525E7518 /* Pods_Vita.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		5070D93E26BAE7A800AC798F /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5070D94026BAE7DA00AC798F /* Journal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5070D94326BAE94B00AC798F /* CodableManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableManagedObject.swift; sourceTree = "<group>"; };
+		5070D94726BB18E000AC798F /* testData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testData.json; sourceTree = "<group>"; };
+		5070D94926BB212D00AC798F /* VCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCoreData.swift; sourceTree = "<group>"; };
 		5449B1649E8E0D82D2ABDF43 /* Pods-Vita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.debug.xcconfig"; sourceTree = "<group>"; };
 		6164B53D513D8D9E98A76E3C /* Pods-Vita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +85,7 @@
 			children = (
 				5070D93D26BAE71E00AC798F /* Model */,
 				500E983826B4467700D6F554 /* Views */,
-				500E983926B4468B00D6F554 /* Delegate */,
+				500E983926B4468B00D6F554 /* Delegates */,
 				500E983726B4464B00D6F554 /* Supporting Files */,
 			);
 			path = Vita;
@@ -99,6 +103,7 @@
 		500E983726B4464B00D6F554 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5070D94726BB18E000AC798F /* testData.json */,
 				500E982D26B4423300D6F554 /* Info.plist */,
 				500E983326B4424400D6F554 /* Vita.entitlements */,
 				500E982226B4423100D6F554 /* Main.storyboard */,
@@ -118,21 +123,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		500E983926B4468B00D6F554 /* Delegate */ = {
+		500E983926B4468B00D6F554 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				500E981C26B4423100D6F554 /* AppDelegate.swift */,
 				500E981E26B4423100D6F554 /* SceneDelegate.swift */,
 				5070D93926BAD6C100AC798F /* SplitViewDelegate.swift */,
+				5070D94926BB212D00AC798F /* VCoreData.swift */,
 			);
-			path = Delegate;
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		5070D93D26BAE71E00AC798F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5070D93E26BAE7A800AC798F /* Entry+CoreDataClass.swift */,
 				5070D94026BAE7DA00AC798F /* Journal+CoreDataClass.swift */,
+				5070D93E26BAE7A800AC798F /* Entry+CoreDataClass.swift */,
 				5070D94226BAE93B00AC798F /* Extensions */,
 			);
 			path = Model;
@@ -217,6 +223,7 @@
 				500E982C26B4423300D6F554 /* LaunchScreen.storyboard in Resources */,
 				500E982926B4423300D6F554 /* Assets.xcassets in Resources */,
 				500E982426B4423100D6F554 /* Main.storyboard in Resources */,
+				5070D94826BB18E000AC798F /* testData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +283,7 @@
 				500E981D26B4423100D6F554 /* AppDelegate.swift in Sources */,
 				5070D94426BAE94B00AC798F /* CodableManagedObject.swift in Sources */,
 				5070D94126BAE7DA00AC798F /* Journal+CoreDataClass.swift in Sources */,
+				5070D94A26BB212D00AC798F /* VCoreData.swift in Sources */,
 				500E981F26B4423100D6F554 /* SceneDelegate.swift in Sources */,
 				5070D93C26BADCD300AC798F /* EntryListViewController.swift in Sources */,
 			);
