@@ -10,10 +10,10 @@ import CoreData
 
 class EntryListViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
 
-    var dataSource: UITableViewDiffableDataSource<Int, Entry>!
-    var fetchedResultsController: NSFetchedResultsController<Entry>!
+    private var dataSource: UITableViewDiffableDataSource<Int, Entry>!
+    private var fetchedResultsController: NSFetchedResultsController<Entry>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,8 @@ class EntryListViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose,
                                                             target: self,
                                                             action: newEntryAction)
+        tableView.delegate = self
+        tableView.alwaysBounceVertical = true
         tableView.register(EntryListCell.nib(), forCellReuseIdentifier: "Cell")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 90
@@ -71,6 +73,16 @@ class EntryListViewController: UIViewController {
 
     @objc func presentNewEntry(_ sender: UIView) {
         print("HERE 2!")
+    }
+}
+
+extension EntryListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = EntryViewController.fromNib()
+        vc.entry = dataSource.itemIdentifier(for: indexPath)
+        let nc = UINavigationController()
+        nc.viewControllers = [vc]
+        showDetailViewController(nc, sender: self)
     }
 }
 

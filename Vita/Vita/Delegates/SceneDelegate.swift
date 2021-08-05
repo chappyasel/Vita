@@ -10,29 +10,16 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    // swiftlint:disable weak_delegate
-    var splitViewDelegate = SplitViewDelegate()
 
     func scene(_ scene: UIScene,
                willConnectTo _: UISceneSession,
                options _: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        let entryListVC = EntryListViewController.fromNib()
-
-        let entryVC = EntryViewController.fromNib()
-
-        let splitVC = UISplitViewController(style: .doubleColumn)
-        splitVC.viewControllers = [entryListVC, entryVC]
-        splitVC.minimumPrimaryColumnWidth = 200
-        splitVC.maximumPrimaryColumnWidth = 800
-        splitVC.delegate = splitViewDelegate
-
+        let splitVC = VSplitViewController(style: .doubleColumn)
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = splitVC
         window.makeKeyAndVisible()
         self.window = window
-
     }
 
     func sceneDidDisconnect(_: UIScene) {

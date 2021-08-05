@@ -29,6 +29,7 @@
 		5070D95B26BB5DD600AC798F /* EntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95A26BB5DD600AC798F /* EntryViewController.xib */; };
 		5070D95D26BB5E5700AC798F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D95C26BB5E5700AC798F /* SettingsViewController.swift */; };
 		5070D95F26BB5FF800AC798F /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95E26BB5FF800AC798F /* SettingsViewController.xib */; };
+		5070D96126BB9CED00AC798F /* VSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D96026BB9CED00AC798F /* VSplitViewController.swift */; };
 		C19E6025A1BD0420235687B6 /* Pods_Vita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818D395F840B700525E7518 /* Pods_Vita.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		5070D95A26BB5DD600AC798F /* EntryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryViewController.xib; sourceTree = "<group>"; };
 		5070D95C26BB5E5700AC798F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5070D95E26BB5FF800AC798F /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		5070D96026BB9CED00AC798F /* VSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VSplitViewController.swift; path = Vita/Views/VSplitViewController.swift; sourceTree = SOURCE_ROOT; };
 		5449B1649E8E0D82D2ABDF43 /* Pods-Vita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.debug.xcconfig"; sourceTree = "<group>"; };
 		6164B53D513D8D9E98A76E3C /* Pods-Vita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +132,7 @@
 		500E983826B4467700D6F554 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5070D96026BB9CED00AC798F /* VSplitViewController.swift */,
 				5070D94B26BB2DBD00AC798F /* Entry List */,
 				5070D94C26BB2DC700AC798F /* Entry */,
 				5070D94E26BB2DDC00AC798F /* Profile */,
@@ -353,6 +356,7 @@
 				5070D94A26BB212D00AC798F /* VCoreData.swift in Sources */,
 				5070D95D26BB5E5700AC798F /* SettingsViewController.swift in Sources */,
 				500E981F26B4423100D6F554 /* SceneDelegate.swift in Sources */,
+				5070D96126BB9CED00AC798F /* VSplitViewController.swift in Sources */,
 				5070D93C26BADCD300AC798F /* EntryListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

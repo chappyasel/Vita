@@ -15,29 +15,51 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No entry selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrA-wJ-8vW">
-                        <rect key="frame" x="139.5" y="442.5" width="135" height="21"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NzY-hb-3dF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="1500" id="AfJ-W9-LxV"/>
+                        </constraints>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <color key="textColor" systemColor="labelColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No entry selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMz-fn-IaC">
+                        <rect key="frame" x="122.5" y="440.5" width="169" height="25.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <viewLayoutGuide key="safeArea" id="xsZ-gV-VKv"/>
                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 <constraints>
-                    <constraint firstItem="ZrA-wJ-8vW" firstAttribute="centerX" secondItem="xsZ-gV-VKv" secondAttribute="centerX" id="m2c-62-0BP"/>
-                    <constraint firstItem="ZrA-wJ-8vW" firstAttribute="centerY" secondItem="xsZ-gV-VKv" secondAttribute="centerY" id="mBR-lQ-psQ"/>
+                    <constraint firstItem="uMz-fn-IaC" firstAttribute="centerX" secondItem="xsZ-gV-VKv" secondAttribute="centerX" id="Fus-Bh-Irj"/>
+                    <constraint firstItem="xsZ-gV-VKv" firstAttribute="bottom" secondItem="NzY-hb-3dF" secondAttribute="bottom" id="JXR-TK-cwf"/>
+                    <constraint firstItem="NzY-hb-3dF" firstAttribute="centerX" secondItem="xsZ-gV-VKv" secondAttribute="centerX" id="Mpc-bT-VRS"/>
+                    <constraint firstItem="NzY-hb-3dF" firstAttribute="leading" secondItem="xsZ-gV-VKv" secondAttribute="leading" priority="999" id="SI1-vR-kZ9"/>
+                    <constraint firstItem="uMz-fn-IaC" firstAttribute="centerY" secondItem="xsZ-gV-VKv" secondAttribute="centerY" id="T9M-cg-fEC"/>
+                    <constraint firstItem="NzY-hb-3dF" firstAttribute="top" secondItem="xsZ-gV-VKv" secondAttribute="top" id="sp0-Wg-4fO"/>
                 </constraints>
             </view>
             <connections>
-                <outlet property="label" destination="ZrA-wJ-8vW" id="7XM-6Y-5TW"/>
+                <outlet property="noEntryLabel" destination="uMz-fn-IaC" id="MXH-p7-NpN"/>
+                <outlet property="textView" destination="NzY-hb-3dF" id="fe4-tU-8vG"/>
             </connections>
-            <point key="canvasLocation" x="232" y="123"/>
+            <point key="canvasLocation" x="231.8840579710145" y="122.54464285714285"/>
         </viewController>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

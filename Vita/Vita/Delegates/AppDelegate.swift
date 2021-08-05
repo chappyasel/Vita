@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // swiftlint:disable line_length
     func application(_: UIApplication,
                      didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        VCoreData.shared.loadTestData()
+        // VCoreData.shared.loadTestData()
         return true
     }
 

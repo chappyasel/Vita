@@ -15,17 +15,19 @@ class EntryListCell: UITableViewCell {
         }
     }
 
-    @IBOutlet weak var dateView: UIView!
-    @IBOutlet weak var weekdayLabel: UILabel!
-    @IBOutlet weak var dayLabel: UILabel!
-
-    static func nib() -> UINib {
-        UINib(nibName: String(describing: EntryListCell.self), bundle: Bundle.main)
-    }
+    @IBOutlet private weak var dateView: UIView!
+    @IBOutlet private weak var weekdayLabel: UILabel!
+    @IBOutlet private weak var dayLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
         dateView.layer.cornerRadius = 16
+    }
+}
+
+extension EntryListCell {
+    static func nib() -> UINib {
+        UINib(nibName: String(describing: EntryListCell.self), bundle: Bundle.main)
     }
 }
