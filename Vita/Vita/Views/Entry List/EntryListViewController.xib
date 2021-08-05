@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="Eey-IU-iXv" customClass="EntryListViewController" customModule="Vita" customModuleProvider="target">
+            <view key="view" contentMode="scaleToFill" id="dhL-v3-dZT">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DPn-2w-77M">
+                        <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </tableView>
+                </subviews>
+                <viewLayoutGuide key="safeArea" id="uFC-TJ-DS1"/>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <constraints>
+                    <constraint firstItem="uFC-TJ-DS1" firstAttribute="bottom" secondItem="DPn-2w-77M" secondAttribute="bottom" id="Nkw-7W-FW0"/>
+                    <constraint firstItem="DPn-2w-77M" firstAttribute="top" secondItem="uFC-TJ-DS1" secondAttribute="top" id="O7d-8T-gLV"/>
+                    <constraint firstItem="DPn-2w-77M" firstAttribute="leading" secondItem="uFC-TJ-DS1" secondAttribute="leading" id="UhS-5e-Jju"/>
+                    <constraint firstItem="uFC-TJ-DS1" firstAttribute="trailing" secondItem="DPn-2w-77M" secondAttribute="trailing" id="z3D-yL-pzF"/>
+                </constraints>
+            </view>
+            <nil key="simulatedTopBarMetrics"/>
+            <connections>
+                <outlet property="tableView" destination="DPn-2w-77M" id="GFD-GQ-6TZ"/>
+            </connections>
+            <point key="canvasLocation" x="229" y="119"/>
+        </viewController>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

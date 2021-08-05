@@ -28,7 +28,6 @@ class VCoreData {
     var context: NSManagedObjectContext { return persistentContainer.viewContext }
 
     func save() {
-        let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()
@@ -46,8 +45,7 @@ class VCoreData {
     // TODO: remove test data code
     func loadTestData() {
         do {
-            let journals: [Journal] =
-                try persistentContainer.viewContext.fetch(Journal.fetchRequest())
+            let journals: [Journal] = try context.fetch(Journal.fetchRequest())
             journals.forEach { persistentContainer.viewContext.delete($0) }
         } catch {
             fatalError("Journals not removed:\n\(error)")

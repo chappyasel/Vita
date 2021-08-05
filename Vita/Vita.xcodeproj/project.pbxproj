@@ -10,7 +10,6 @@
 		500E981D26B4423100D6F554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E981C26B4423100D6F554 /* AppDelegate.swift */; };
 		500E981F26B4423100D6F554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E981E26B4423100D6F554 /* SceneDelegate.swift */; };
 		500E982126B4423100D6F554 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E982026B4423100D6F554 /* EntryViewController.swift */; };
-		500E982426B4423100D6F554 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 500E982226B4423100D6F554 /* Main.storyboard */; };
 		500E982726B4423100D6F554 /* Vita.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 500E982526B4423100D6F554 /* Vita.xcdatamodeld */; };
 		500E982926B4423300D6F554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 500E982826B4423300D6F554 /* Assets.xcassets */; };
 		500E982C26B4423300D6F554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 500E982A26B4423300D6F554 /* LaunchScreen.storyboard */; };
@@ -22,6 +21,14 @@
 		5070D94426BAE94B00AC798F /* CodableManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D94326BAE94B00AC798F /* CodableManagedObject.swift */; };
 		5070D94826BB18E000AC798F /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5070D94726BB18E000AC798F /* testData.json */; };
 		5070D94A26BB212D00AC798F /* VCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D94926BB212D00AC798F /* VCoreData.swift */; };
+		5070D95026BB2E0D00AC798F /* EntryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D94F26BB2E0D00AC798F /* EntryListCell.swift */; };
+		5070D95226BB2EC100AC798F /* EntryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95126BB2EC100AC798F /* EntryListCell.xib */; };
+		5070D95526BB542F00AC798F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D95426BB542F00AC798F /* ProfileViewController.swift */; };
+		5070D95726BB54C500AC798F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95626BB54C500AC798F /* ProfileViewController.xib */; };
+		5070D95926BB5C0F00AC798F /* EntryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95826BB5C0F00AC798F /* EntryListViewController.xib */; };
+		5070D95B26BB5DD600AC798F /* EntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95A26BB5DD600AC798F /* EntryViewController.xib */; };
+		5070D95D26BB5E5700AC798F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D95C26BB5E5700AC798F /* SettingsViewController.swift */; };
+		5070D95F26BB5FF800AC798F /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95E26BB5FF800AC798F /* SettingsViewController.xib */; };
 		C19E6025A1BD0420235687B6 /* Pods_Vita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818D395F840B700525E7518 /* Pods_Vita.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +38,6 @@
 		500E981C26B4423100D6F554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		500E981E26B4423100D6F554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		500E982026B4423100D6F554 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
-		500E982326B4423100D6F554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		500E982626B4423100D6F554 /* Vita.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vita.xcdatamodel; sourceTree = "<group>"; };
 		500E982826B4423300D6F554 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		500E982B26B4423300D6F554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +51,14 @@
 		5070D94326BAE94B00AC798F /* CodableManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableManagedObject.swift; sourceTree = "<group>"; };
 		5070D94726BB18E000AC798F /* testData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testData.json; sourceTree = "<group>"; };
 		5070D94926BB212D00AC798F /* VCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCoreData.swift; sourceTree = "<group>"; };
+		5070D94F26BB2E0D00AC798F /* EntryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListCell.swift; sourceTree = "<group>"; };
+		5070D95126BB2EC100AC798F /* EntryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryListCell.xib; sourceTree = "<group>"; };
+		5070D95426BB542F00AC798F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5070D95626BB54C500AC798F /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		5070D95826BB5C0F00AC798F /* EntryListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryListViewController.xib; sourceTree = "<group>"; };
+		5070D95A26BB5DD600AC798F /* EntryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryViewController.xib; sourceTree = "<group>"; };
+		5070D95C26BB5E5700AC798F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5070D95E26BB5FF800AC798F /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		5449B1649E8E0D82D2ABDF43 /* Pods-Vita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.debug.xcconfig"; sourceTree = "<group>"; };
 		6164B53D513D8D9E98A76E3C /* Pods-Vita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,7 +120,6 @@
 				5070D94726BB18E000AC798F /* testData.json */,
 				500E982D26B4423300D6F554 /* Info.plist */,
 				500E983326B4424400D6F554 /* Vita.entitlements */,
-				500E982226B4423100D6F554 /* Main.storyboard */,
 				500E982A26B4423300D6F554 /* LaunchScreen.storyboard */,
 				500E982826B4423300D6F554 /* Assets.xcassets */,
 				500E982526B4423100D6F554 /* Vita.xcdatamodeld */,
@@ -117,8 +130,9 @@
 		500E983826B4467700D6F554 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5070D93B26BADCD300AC798F /* EntryListViewController.swift */,
-				500E982026B4423100D6F554 /* EntryViewController.swift */,
+				5070D94B26BB2DBD00AC798F /* Entry List */,
+				5070D94C26BB2DC700AC798F /* Entry */,
+				5070D94E26BB2DDC00AC798F /* Profile */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +164,53 @@
 				5070D94326BAE94B00AC798F /* CodableManagedObject.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5070D94B26BB2DBD00AC798F /* Entry List */ = {
+			isa = PBXGroup;
+			children = (
+				5070D93B26BADCD300AC798F /* EntryListViewController.swift */,
+				5070D95826BB5C0F00AC798F /* EntryListViewController.xib */,
+				5070D95326BB2EC700AC798F /* Cell */,
+			);
+			path = "Entry List";
+			sourceTree = "<group>";
+		};
+		5070D94C26BB2DC700AC798F /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				500E982026B4423100D6F554 /* EntryViewController.swift */,
+				5070D95A26BB5DD600AC798F /* EntryViewController.xib */,
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
+		5070D94D26BB2DD200AC798F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5070D95C26BB5E5700AC798F /* SettingsViewController.swift */,
+				5070D95E26BB5FF800AC798F /* SettingsViewController.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		5070D94E26BB2DDC00AC798F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5070D95426BB542F00AC798F /* ProfileViewController.swift */,
+				5070D95626BB54C500AC798F /* ProfileViewController.xib */,
+				5070D94D26BB2DD200AC798F /* Settings */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		5070D95326BB2EC700AC798F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5070D94F26BB2E0D00AC798F /* EntryListCell.swift */,
+				5070D95126BB2EC100AC798F /* EntryListCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		959AA28900962660270B5D25 /* Pods */ = {
@@ -221,8 +282,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				500E982C26B4423300D6F554 /* LaunchScreen.storyboard in Resources */,
+				5070D95926BB5C0F00AC798F /* EntryListViewController.xib in Resources */,
 				500E982926B4423300D6F554 /* Assets.xcassets in Resources */,
-				500E982426B4423100D6F554 /* Main.storyboard in Resources */,
+				5070D95F26BB5FF800AC798F /* SettingsViewController.xib in Resources */,
+				5070D95B26BB5DD600AC798F /* EntryViewController.xib in Resources */,
+				5070D95726BB54C500AC798F /* ProfileViewController.xib in Resources */,
+				5070D95226BB2EC100AC798F /* EntryListCell.xib in Resources */,
 				5070D94826BB18E000AC798F /* testData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,8 +347,11 @@
 				500E982726B4423100D6F554 /* Vita.xcdatamodeld in Sources */,
 				500E981D26B4423100D6F554 /* AppDelegate.swift in Sources */,
 				5070D94426BAE94B00AC798F /* CodableManagedObject.swift in Sources */,
+				5070D95526BB542F00AC798F /* ProfileViewController.swift in Sources */,
 				5070D94126BAE7DA00AC798F /* Journal+CoreDataClass.swift in Sources */,
+				5070D95026BB2E0D00AC798F /* EntryListCell.swift in Sources */,
 				5070D94A26BB212D00AC798F /* VCoreData.swift in Sources */,
+				5070D95D26BB5E5700AC798F /* SettingsViewController.swift in Sources */,
 				500E981F26B4423100D6F554 /* SceneDelegate.swift in Sources */,
 				5070D93C26BADCD300AC798F /* EntryListViewController.swift in Sources */,
 			);
@@ -292,14 +360,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		500E982226B4423100D6F554 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				500E982326B4423100D6F554 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		500E982A26B4423300D6F554 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

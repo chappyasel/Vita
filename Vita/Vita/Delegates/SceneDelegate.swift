@@ -16,15 +16,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene,
                willConnectTo _: UISceneSession,
                options _: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the
-        // UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and
-        // attached to the scene.
-        // This delegate does not imply the connecting scene or session are new
-        // (see `application:configurationForConnectingSceneSession` instead).
-        configureSplitViewController()
-        // swiftlint:disable unused_optional_binding
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        let entryListVC = EntryListViewController.fromNib()
+
+        let entryVC = EntryViewController.fromNib()
+
+        let splitVC = UISplitViewController(style: .doubleColumn)
+        splitVC.viewControllers = [entryListVC, entryVC]
+        splitVC.minimumPrimaryColumnWidth = 200
+        splitVC.maximumPrimaryColumnWidth = 800
+        splitVC.delegate = splitViewDelegate
+
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = splitVC
+        window.makeKeyAndVisible()
+        self.window = window
+
     }
 
     func sceneDidDisconnect(_: UIScene) {
@@ -59,18 +67,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // and store enough scene-specific state information
         // to restore the scene back to its current state.
         VCoreData.shared.save()
-    }
-}
-
-extension SceneDelegate {
-    private func configureSplitViewController() {
-        guard
-            let window = window,
-            let splitViewController = window.rootViewController as? UISplitViewController
-        else {
-            fatalError()
-        }
-
-        splitViewController.delegate = splitViewDelegate
     }
 }

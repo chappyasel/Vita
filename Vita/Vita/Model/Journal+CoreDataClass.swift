@@ -42,4 +42,8 @@ class Journal: NSManagedObject, Codable {
         // swiftlint:disable force_cast
         try container.encode(entries as! Set<Entry>, forKey: .entries)
     }
+
+    static func == (lhs: Journal, rhs: Journal) -> Bool {
+        return lhs.name == rhs.name
+    }
 }

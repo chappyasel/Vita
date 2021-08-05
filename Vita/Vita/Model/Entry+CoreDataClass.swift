@@ -46,4 +46,8 @@ class Entry: NSManagedObject, Codable {
         try container.encode(text, forKey: .text)
         // try container.encode(journal, forKey: .journal)
     }
+
+    static func == (lhs: Entry, rhs: Entry) -> Bool {
+        return lhs.date == rhs.date && lhs.journal?.name == rhs.journal?.name
+    }
 }
