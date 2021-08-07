@@ -11,9 +11,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // swiftlint:disable line_length
-    func application(_: UIApplication,
+    func application(_ app: UIApplication,
                      didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // VCoreData.shared.loadTestData()
+        app.registerForRemoteNotifications()
         return true
     }
 
@@ -35,5 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes,
         // as they will not return.
+    }
+    
+    func application(_ application: UIApplication,
+                     didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        print("recieved!")
     }
 }

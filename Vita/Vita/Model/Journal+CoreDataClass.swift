@@ -9,20 +9,31 @@ import Foundation
 import CoreData
 
 class Journal: NSManagedObject, Codable {
-
+    
     enum CodingKeys: String, CodingKey {
-        case name, created, lastEdit = "last_edit", lastView = "last_view", entries
+        case id
+        case name
+        case created
+        case lastEdit = "last_edit"
+        case lastView = "last_view"
+        case entries
+    }
+    
+    convenience init() {
+        self.init(context: VCoreData.shared.context)
+        self.id = UUID().uuidString
+        self.name = "Untitled"
+        self.created = Date()
+        self.lastEdit = Date()
+        self.lastView = Date()
+        self.entries = NSSet()
     }
 
     required convenience init(from decoder: Decoder) throws {
-        guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext]
-                as? NSManagedObjectContext else {
-          throw DecoderConfigurationError.missingManagedObjectContext
-        }
-
-        self.init(context: context)
+        self.init(context: VCoreData.shared.context)
 
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(String.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
         self.created = try container.decode(Date.self, forKey: .created)
         self.lastEdit = try container.decode(Date.self, forKey: .lastEdit)
@@ -35,6 +46,7 @@ class Journal: NSManagedObject, Codable {
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
         try container.encode(name, forKey: .name)
         try container.encode(created, forKey: .created)
         try container.encode(lastEdit, forKey: .lastEdit)

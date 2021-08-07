@@ -36,12 +36,12 @@
                 <viewLayoutGuide key="safeArea" id="xsZ-gV-VKv"/>
                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 <constraints>
+                    <constraint firstItem="xsZ-gV-VKv" firstAttribute="trailing" secondItem="NzY-hb-3dF" secondAttribute="trailing" id="6FV-7x-IxF"/>
                     <constraint firstItem="uMz-fn-IaC" firstAttribute="centerX" secondItem="xsZ-gV-VKv" secondAttribute="centerX" id="Fus-Bh-Irj"/>
-                    <constraint firstItem="xsZ-gV-VKv" firstAttribute="bottom" secondItem="NzY-hb-3dF" secondAttribute="bottom" id="JXR-TK-cwf"/>
-                    <constraint firstItem="NzY-hb-3dF" firstAttribute="centerX" secondItem="xsZ-gV-VKv" secondAttribute="centerX" id="Mpc-bT-VRS"/>
-                    <constraint firstItem="NzY-hb-3dF" firstAttribute="leading" secondItem="xsZ-gV-VKv" secondAttribute="leading" priority="999" id="SI1-vR-kZ9"/>
+                    <constraint firstItem="NzY-hb-3dF" firstAttribute="leading" secondItem="xsZ-gV-VKv" secondAttribute="leading" id="R63-sG-jnR"/>
                     <constraint firstItem="uMz-fn-IaC" firstAttribute="centerY" secondItem="xsZ-gV-VKv" secondAttribute="centerY" id="T9M-cg-fEC"/>
-                    <constraint firstItem="NzY-hb-3dF" firstAttribute="top" secondItem="xsZ-gV-VKv" secondAttribute="top" id="sp0-Wg-4fO"/>
+                    <constraint firstItem="xsZ-gV-VKv" firstAttribute="bottom" secondItem="NzY-hb-3dF" secondAttribute="bottom" id="oh3-CM-d8n"/>
+                    <constraint firstItem="xsZ-gV-VKv" firstAttribute="top" secondItem="NzY-hb-3dF" secondAttribute="top" id="wMO-jX-RgR"/>
                 </constraints>
             </view>
             <connections>

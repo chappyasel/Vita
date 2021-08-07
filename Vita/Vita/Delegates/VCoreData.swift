@@ -22,6 +22,14 @@ class VCoreData {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(storeRemoteChange(_:)),
+                                               name: .NSPersistentStoreRemoteChange,
+                                               object: container.persistentStoreCoordinator)
+        
         return container
     }()
 
@@ -41,6 +49,10 @@ class VCoreData {
             }
         }
     }
+    
+    @objc func storeRemoteChange(_ notification: Notification) {
+        print("STORE CHANGE")
+    }
 
     // TODO: remove test data code
     func loadTestData() {
@@ -57,9 +69,7 @@ class VCoreData {
 
         do {
             let data = try Data(contentsOf: file)
-
-            let decoder = VJSONDecoder()
-            _ = try decoder.decode(Journal.self, from: data)
+            _ = try VDecoder().decode(Journal.self, from: data)
         } catch {
             fatalError("Couldn't parse test data:\n\(error)")
         }

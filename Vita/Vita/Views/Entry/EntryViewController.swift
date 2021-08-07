@@ -33,6 +33,8 @@ class EntryViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Test"
         textView.delegate = self
+        textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        textView.alwaysBounceVertical = true
         textView.alpha = 0
         textViewSubject
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)

@@ -19,13 +19,13 @@ class EntryListViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Vita"
         navigationItem.largeTitleDisplayMode = .automatic
-        let profileAction = #selector(EntryListViewController.presentProfile(_:))
+        let profileAction = #selector(EntryListViewController.profileButtonPressed(_:))
         navigationItem.leftBarButtonItem =
             UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"),
                                            style: .plain,
                                            target: self,
                                            action: profileAction)
-        let newEntryAction = #selector(EntryListViewController.presentNewEntry(_:))
+        let newEntryAction = #selector(EntryListViewController.newEntryButtonPressed(_:))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose,
                                                             target: self,
                                                             action: newEntryAction)
@@ -52,6 +52,7 @@ class EntryListViewController: UIViewController {
 
     func initFetchedResultsController() {
         let fetchRequest: NSFetchRequest<Entry> = Entry.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "journal = %@", Database.currentJournal)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         fetchedResultsController =
             NSFetchedResultsController(fetchRequest: fetchRequest,
@@ -65,24 +66,28 @@ class EntryListViewController: UIViewController {
         }
     }
 
-    @objc func presentProfile(_ sender: UIView) {
+    @objc func profileButtonPressed(_ sender: UIView) {
         navigationController?.present(ProfileViewController.fromNib(), animated: true) {
 
         }
     }
 
-    @objc func presentNewEntry(_ sender: UIView) {
-        print("HERE 2!")
+    @objc func newEntryButtonPressed(_ sender: UIView) {
+        present(entry: Entry())
+    }
+    
+    func present(entry: Entry?) {
+        let vc = EntryViewController.fromNib()
+        vc.entry = entry
+        let nc = UINavigationController()
+        nc.viewControllers = [vc]
+        showDetailViewController(nc, sender: self)
     }
 }
 
 extension EntryListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = EntryViewController.fromNib()
-        vc.entry = dataSource.itemIdentifier(for: indexPath)
-        let nc = UINavigationController()
-        nc.viewControllers = [vc]
-        showDetailViewController(nc, sender: self)
+        present(entry: dataSource.itemIdentifier(for: indexPath))
     }
 }
 
