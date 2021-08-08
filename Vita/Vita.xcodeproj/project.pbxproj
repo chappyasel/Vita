@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5000A39126BECBFC000FC8AD /* EntryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5000A39026BECBFC000FC8AD /* EntryInfoViewController.swift */; };
+		5000A39326BECCF2000FC8AD /* EntryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5000A39226BECCF2000FC8AD /* EntryInfoView.swift */; };
 		500E981D26B4423100D6F554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E981C26B4423100D6F554 /* AppDelegate.swift */; };
 		500E981F26B4423100D6F554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E981E26B4423100D6F554 /* SceneDelegate.swift */; };
 		500E982126B4423100D6F554 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E982026B4423100D6F554 /* EntryViewController.swift */; };
@@ -14,6 +16,8 @@
 		500E982926B4423300D6F554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 500E982826B4423300D6F554 /* Assets.xcassets */; };
 		500E982C26B4423300D6F554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 500E982A26B4423300D6F554 /* LaunchScreen.storyboard */; };
 		500E983626B443C000D6F554 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500E983526B443C000D6F554 /* CloudKit.framework */; };
+		502BF76426BED0C600B34C14 /* Journal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BF76026BED0C600B34C14 /* Journal+CoreDataProperties.swift */; };
+		502BF76626BED0C600B34C14 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BF76326BED0C600B34C14 /* Entry+CoreDataProperties.swift */; };
 		5070D93C26BADCD300AC798F /* EntryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D93B26BADCD300AC798F /* EntryListViewController.swift */; };
 		5070D93F26BAE7A800AC798F /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D93E26BAE7A800AC798F /* Entry+CoreDataClass.swift */; };
 		5070D94126BAE7DA00AC798F /* Journal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D94026BAE7DA00AC798F /* Journal+CoreDataClass.swift */; };
@@ -31,11 +35,14 @@
 		5070D96126BB9CED00AC798F /* VSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D96026BB9CED00AC798F /* VSplitViewController.swift */; };
 		50BD329E26BE0D0E009A4480 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BD329D26BE0D0E009A4480 /* Database.swift */; };
 		50BD32A026BE11EE009A4480 /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BD329F26BE11EE009A4480 /* UserDefaultWrapper.swift */; };
+		50D46EEC26BF4E370015B9FB /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D46EEB26BF4E370015B9FB /* StringFormatter.swift */; };
 		C19E6025A1BD0420235687B6 /* Pods_Vita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818D395F840B700525E7518 /* Pods_Vita.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2818D395F840B700525E7518 /* Pods_Vita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5000A39026BECBFC000FC8AD /* EntryInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryInfoViewController.swift; sourceTree = "<group>"; };
+		5000A39226BECCF2000FC8AD /* EntryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryInfoView.swift; sourceTree = "<group>"; };
 		500E981926B4423100D6F554 /* Vita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		500E981C26B4423100D6F554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		500E981E26B4423100D6F554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +53,8 @@
 		500E982D26B4423300D6F554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		500E983326B4424400D6F554 /* Vita.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vita.entitlements; sourceTree = "<group>"; };
 		500E983526B443C000D6F554 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		502BF76026BED0C600B34C14 /* Journal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Journal+CoreDataProperties.swift"; path = "/Users/chappyasel/Desktop/Repos/Vita/Vita/Vita/Model/Journal+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		502BF76326BED0C600B34C14 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Entry+CoreDataProperties.swift"; path = "/Users/chappyasel/Desktop/Repos/Vita/Vita/Vita/Model/Entry+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		5070D93B26BADCD300AC798F /* EntryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListViewController.swift; sourceTree = "<group>"; };
 		5070D93E26BAE7A800AC798F /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5070D94026BAE7DA00AC798F /* Journal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -63,6 +72,7 @@
 		5070D96026BB9CED00AC798F /* VSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VSplitViewController.swift; path = Vita/Views/VSplitViewController.swift; sourceTree = SOURCE_ROOT; };
 		50BD329D26BE0D0E009A4480 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		50BD329F26BE11EE009A4480 /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultWrapper.swift; sourceTree = "<group>"; };
+		50D46EEB26BF4E370015B9FB /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
 		5449B1649E8E0D82D2ABDF43 /* Pods-Vita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.debug.xcconfig"; sourceTree = "<group>"; };
 		6164B53D513D8D9E98A76E3C /* Pods-Vita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5000A38F26BECBF0000FC8AD /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				5000A39026BECBFC000FC8AD /* EntryInfoViewController.swift */,
+				5000A39226BECCF2000FC8AD /* EntryInfoView.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
 		500E981026B4423100D6F554 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				5070D93D26BAE71E00AC798F /* Model */,
+				50D46EEA26BF4BEA0015B9FB /* Util */,
 				500E983826B4467700D6F554 /* Views */,
 				500E983926B4468B00D6F554 /* Delegates */,
 				500E983726B4464B00D6F554 /* Supporting Files */,
@@ -147,17 +167,34 @@
 			children = (
 				500E981C26B4423100D6F554 /* AppDelegate.swift */,
 				500E981E26B4423100D6F554 /* SceneDelegate.swift */,
-				5070D94926BB212D00AC798F /* VCoreData.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		502BF76826BED0EC00B34C14 /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				502BF76026BED0C600B34C14 /* Journal+CoreDataProperties.swift */,
+				5070D94026BAE7DA00AC798F /* Journal+CoreDataClass.swift */,
+			);
+			path = Journal;
+			sourceTree = "<group>";
+		};
+		502BF76926BED0F600B34C14 /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				502BF76326BED0C600B34C14 /* Entry+CoreDataProperties.swift */,
+				5070D93E26BAE7A800AC798F /* Entry+CoreDataClass.swift */,
+			);
+			path = Entry;
 			sourceTree = "<group>";
 		};
 		5070D93D26BAE71E00AC798F /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				50BD329D26BE0D0E009A4480 /* Database.swift */,
-				5070D94026BAE7DA00AC798F /* Journal+CoreDataClass.swift */,
-				5070D93E26BAE7A800AC798F /* Entry+CoreDataClass.swift */,
+				502BF76826BED0EC00B34C14 /* Journal */,
+				502BF76926BED0F600B34C14 /* Entry */,
 				50BD32A126BE11F3009A4480 /* Helpers */,
 			);
 			path = Model;
@@ -178,6 +215,7 @@
 			children = (
 				500E982026B4423100D6F554 /* EntryViewController.swift */,
 				5070D95A26BB5DD600AC798F /* EntryViewController.xib */,
+				5000A38F26BECBF0000FC8AD /* Info */,
 			);
 			path = Entry;
 			sourceTree = "<group>";
@@ -213,10 +251,19 @@
 		50BD32A126BE11F3009A4480 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				5070D94926BB212D00AC798F /* VCoreData.swift */,
 				50BD329F26BE11EE009A4480 /* UserDefaultWrapper.swift */,
 				5070D94326BAE94B00AC798F /* Serialization.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		50D46EEA26BF4BEA0015B9FB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				50D46EEB26BF4E370015B9FB /* StringFormatter.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		959AA28900962660270B5D25 /* Pods */ = {
@@ -352,6 +399,7 @@
 				500E982726B4423100D6F554 /* Vita.xcdatamodeld in Sources */,
 				500E981D26B4423100D6F554 /* AppDelegate.swift in Sources */,
 				5070D94426BAE94B00AC798F /* Serialization.swift in Sources */,
+				5000A39126BECBFC000FC8AD /* EntryInfoViewController.swift in Sources */,
 				50BD329E26BE0D0E009A4480 /* Database.swift in Sources */,
 				50BD32A026BE11EE009A4480 /* UserDefaultWrapper.swift in Sources */,
 				5070D95526BB542F00AC798F /* ProfileViewController.swift in Sources */,
@@ -359,8 +407,12 @@
 				5070D95026BB2E0D00AC798F /* EntryListCell.swift in Sources */,
 				5070D94A26BB212D00AC798F /* VCoreData.swift in Sources */,
 				5070D95D26BB5E5700AC798F /* SettingsViewController.swift in Sources */,
+				502BF76626BED0C600B34C14 /* Entry+CoreDataProperties.swift in Sources */,
+				5000A39326BECCF2000FC8AD /* EntryInfoView.swift in Sources */,
 				500E981F26B4423100D6F554 /* SceneDelegate.swift in Sources */,
+				50D46EEC26BF4E370015B9FB /* StringFormatter.swift in Sources */,
 				5070D96126BB9CED00AC798F /* VSplitViewController.swift in Sources */,
+				502BF76426BED0C600B34C14 /* Journal+CoreDataProperties.swift in Sources */,
 				5070D93C26BADCD300AC798F /* EntryListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

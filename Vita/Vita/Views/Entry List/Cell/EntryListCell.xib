@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
                             <constraint firstItem="9k0-En-DsX" firstAttribute="centerX" secondItem="wqp-J9-3ur" secondAttribute="centerX" id="5vT-s2-vgp"/>
                             <constraint firstItem="cA3-Tb-o9e" firstAttribute="centerX" secondItem="wqp-J9-3ur" secondAttribute="centerX" id="CGw-jY-522"/>
@@ -42,7 +42,7 @@
                             <constraint firstAttribute="height" constant="65" id="zTd-bO-noU"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No entry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grG-Sj-XFQ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No entry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grG-Sj-XFQ">
                         <rect key="frame" x="95" y="35" width="260" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                         <color key="textColor" systemColor="systemGrayColor"/>
@@ -52,6 +52,7 @@
                 <constraints>
                     <constraint firstItem="wqp-J9-3ur" firstAttribute="leading" secondItem="Nsc-Wa-Slj" secondAttribute="leading" constant="15" id="Fuj-NL-UAA"/>
                     <constraint firstItem="wqp-J9-3ur" firstAttribute="centerY" secondItem="Nsc-Wa-Slj" secondAttribute="centerY" id="VEM-ef-Iac"/>
+                    <constraint firstItem="grG-Sj-XFQ" firstAttribute="height" secondItem="wqp-J9-3ur" secondAttribute="height" multiplier="0.315385" id="Wwl-2N-IX8"/>
                     <constraint firstItem="grG-Sj-XFQ" firstAttribute="centerY" secondItem="Nsc-Wa-Slj" secondAttribute="centerY" id="s0I-KE-XfK"/>
                     <constraint firstItem="grG-Sj-XFQ" firstAttribute="leading" secondItem="wqp-J9-3ur" secondAttribute="trailing" constant="20" id="wgN-Es-fIv"/>
                     <constraint firstAttribute="trailing" secondItem="grG-Sj-XFQ" secondAttribute="trailing" constant="20" id="yaf-uO-Pxy"/>
@@ -61,14 +62,15 @@
             <connections>
                 <outlet property="dateView" destination="wqp-J9-3ur" id="aTf-HV-YMp"/>
                 <outlet property="dayLabel" destination="9k0-En-DsX" id="Y6o-cN-sJO"/>
+                <outlet property="entryLabel" destination="grG-Sj-XFQ" id="KMe-NN-W50"/>
                 <outlet property="weekdayLabel" destination="cA3-Tb-o9e" id="RO2-Fz-o7H"/>
             </connections>
             <point key="canvasLocation" x="-7.9710144927536239" y="102.45535714285714"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

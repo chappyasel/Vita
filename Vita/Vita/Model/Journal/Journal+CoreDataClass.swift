@@ -19,27 +19,31 @@ class Journal: NSManagedObject, Codable {
         case entries
     }
     
+    override func awakeFromInsert() {
+        super.awakeFromInsert()
+        setPrimitiveValue(UUID().uuidString, forKey: "id")
+        setPrimitiveValue("Unititled", forKey: "name")
+        setPrimitiveValue(Date(), forKey: "created")
+        setPrimitiveValue(Date(), forKey: "lastEdit")
+        setPrimitiveValue(Date(), forKey: "lastView")
+        setPrimitiveValue(NSSet(), forKey: "entries")
+    }
+    
     convenience init() {
         self.init(context: VCoreData.shared.context)
-        self.id = UUID().uuidString
-        self.name = "Untitled"
-        self.created = Date()
-        self.lastEdit = Date()
-        self.lastView = Date()
-        self.entries = NSSet()
     }
 
     required convenience init(from decoder: Decoder) throws {
         self.init(context: VCoreData.shared.context)
 
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(String.self, forKey: .id)
-        self.name = try container.decode(String.self, forKey: .name)
-        self.created = try container.decode(Date.self, forKey: .created)
-        self.lastEdit = try container.decode(Date.self, forKey: .lastEdit)
-        self.lastView = try container.decode(Date.self, forKey: .lastView)
-        self.entries = try container.decode(Set<Entry>.self, forKey: .entries) as NSSet
-        if let entries = self.entries as? Set<Entry> {
+        id = try container.decode(String.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        created = try container.decode(Date.self, forKey: .created)
+        lastEdit = try container.decode(Date.self, forKey: .lastEdit)
+        lastView = try container.decode(Date.self, forKey: .lastView)
+        entries = try container.decode(Set<Entry>.self, forKey: .entries) as NSSet
+        if let entries = entries as? Set<Entry> {
             entries.forEach { $0.journal = self }
         }
     }

@@ -20,6 +20,8 @@ class EntryViewController: UIViewController {
             noEntryLabel.alpha = 0
             textView.alpha = 1
             textView.text = entry.text
+            navigationItem.title = StringFormatter.string(for: entry.date,
+                                                          format: .shortWeekdayYear)
         }
     }
 
@@ -31,10 +33,17 @@ class EntryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Test"
+        let infoAction = #selector(EntryViewController.infoButtonPressed(_:))
+        navigationItem.rightBarButtonItem =
+            UIBarButtonItem(image: UIImage(systemName: "info.circle"),
+                                           style: .plain,
+                                           target: self,
+                                           action: infoAction)
         textView.delegate = self
         textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         textView.alwaysBounceVertical = true
+        textView.showsHorizontalScrollIndicator = false
+        textView.showsVerticalScrollIndicator = true
         textView.alpha = 0
         textViewSubject
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
@@ -51,6 +60,17 @@ class EntryViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         saveEntry()
+    }
+    
+    @objc func infoButtonPressed(_ sender: UIView) {
+        presentInfo()
+    }
+    
+    func presentInfo() {
+        let vc = EntryInfoViewController()
+        let nc = UINavigationController()
+        nc.viewControllers = [vc]
+        showDetailViewController(nc, sender: self)
     }
 
     func saveEntry() {

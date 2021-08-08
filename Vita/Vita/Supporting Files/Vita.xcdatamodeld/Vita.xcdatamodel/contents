@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="Entry" representedClassName=".Entry" syncable="YES" codeGenerationType="category">
+    <entity name="Entry" representedClassName=".Entry" syncable="YES">
         <attribute name="created" attributeType="Date" defaultDateTimeInterval="649310400" usesScalarValueType="NO"/>
         <attribute name="date" attributeType="Date" defaultDateTimeInterval="649310400" usesScalarValueType="NO"/>
         <attribute name="duration" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -10,7 +10,7 @@
         <attribute name="text" attributeType="String" defaultValueString=""/>
         <relationship name="journal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Journal" inverseName="entries" inverseEntity="Journal"/>
     </entity>
-    <entity name="Journal" representedClassName=".Journal" syncable="YES" codeGenerationType="category">
+    <entity name="Journal" representedClassName=".Journal" syncable="YES">
         <attribute name="created" attributeType="Date" defaultDateTimeInterval="649310400" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="String" defaultValueString=""/>
         <attribute name="lastEdit" attributeType="Date" defaultDateTimeInterval="649310400" usesScalarValueType="NO"/>

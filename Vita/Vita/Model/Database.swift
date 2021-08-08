@@ -21,8 +21,7 @@ class Database: VDatabase {
             if cachedCurrentJournal != nil { return cachedCurrentJournal! }
             guard let id = UserDefaults.standard.string(forKey: Database.currentJournalKey) else {
                 // If no current journal, look for existing journals, else create new one
-                let newJ = allJournals()
-                    .max { $0.entries?.count ?? 0 > $1.entries?.count ?? 0 } ?? Journal()
+                let newJ = allJournals().max { $0.entries.count > $1.entries.count } ?? Journal()
                 UserDefaults.standard.setValue(newJ.id, forKey: Database.currentJournalKey)
                 cachedCurrentJournal = newJ
                 return newJ
