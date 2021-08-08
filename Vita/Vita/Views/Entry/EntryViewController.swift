@@ -15,6 +15,8 @@ class EntryViewController: UIViewController {
             guard let entry = entry else {
                 noEntryLabel.alpha = 1
                 textView.alpha = 0
+                navigationItem.title = ""
+                navigationItem.rightBarButtonItem = nil
                 return
             }
             noEntryLabel.alpha = 0
@@ -22,6 +24,12 @@ class EntryViewController: UIViewController {
             textView.text = entry.text
             navigationItem.title = StringFormatter.string(for: entry.date,
                                                           format: .shortWeekdayYear)
+            let infoAction = #selector(EntryViewController.infoButtonPressed(_:))
+            navigationItem.rightBarButtonItem =
+                UIBarButtonItem(image: UIImage(systemName: "info.circle"),
+                                               style: .plain,
+                                               target: self,
+                                               action: infoAction)
         }
     }
 
@@ -33,12 +41,6 @@ class EntryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let infoAction = #selector(EntryViewController.infoButtonPressed(_:))
-        navigationItem.rightBarButtonItem =
-            UIBarButtonItem(image: UIImage(systemName: "info.circle"),
-                                           style: .plain,
-                                           target: self,
-                                           action: infoAction)
         textView.delegate = self
         textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         textView.alwaysBounceVertical = true
@@ -62,15 +64,10 @@ class EntryViewController: UIViewController {
         saveEntry()
     }
     
-    @objc func infoButtonPressed(_ sender: UIView) {
-        presentInfo()
-    }
-    
-    func presentInfo() {
-        let vc = EntryInfoViewController()
-        let nc = UINavigationController()
-        nc.viewControllers = [vc]
-        showDetailViewController(nc, sender: self)
+    @objc func infoButtonPressed(_ sender: UIBarButtonItem) {
+        let vc = EntryInfoViewController(entry: entry!)
+        vc.popoverPresentationController?.barButtonItem = sender
+        present(vc, animated: true, completion: nil)
     }
 
     func saveEntry() {

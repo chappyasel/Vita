@@ -66,13 +66,13 @@ class EntryListViewController: UIViewController {
         }
     }
 
-    @objc func profileButtonPressed(_ sender: UIView) {
-        navigationController?.present(ProfileViewController.fromNib(), animated: true) {
-
-        }
+    @objc func profileButtonPressed(_ sender: UIBarButtonItem) {
+        let vc = ProfileViewController.fromNib()
+        vc.popoverPresentationController?.barButtonItem = sender
+        present(vc, animated: true, completion: nil)
     }
 
-    @objc func newEntryButtonPressed(_ sender: UIView) {
+    @objc func newEntryButtonPressed(_ sender: UIBarButtonItem) {
         present(entry: Entry())
     }
     
@@ -88,6 +88,38 @@ class EntryListViewController: UIViewController {
 extension EntryListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         present(entry: dataSource.itemIdentifier(for: indexPath))
+    }
+    
+    func tableView(_ tableView: UITableView,
+                       trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+            // Write action code for the trash
+            let TrashAction = UIContextualAction(style: .normal, title:  "Trash", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+                print("Update action ...")
+                success(true)
+            })
+            TrashAction.backgroundColor = .red
+
+            // Write action code for the Flag
+            let FlagAction = UIContextualAction(style: .normal, title:  "Flag", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+                print("Update action ...")
+                success(true)
+            })
+            FlagAction.backgroundColor = .orange
+
+            // Write action code for the More
+            let MoreAction = UIContextualAction(style: .normal, title:  "More", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+                print("Update action ...")
+                success(true)
+            })
+            MoreAction.backgroundColor = .gray
+
+
+            return UISwipeActionsConfiguration(actions: [TrashAction,FlagAction,MoreAction])
+        }
+    
+    func tableView(_ tableView: UITableView,
+                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return nil
     }
 }
 

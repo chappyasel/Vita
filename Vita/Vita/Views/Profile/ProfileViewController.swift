@@ -10,8 +10,8 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     override func awakeFromNib() {
-        modalPresentationStyle = .formSheet
-        preferredContentSize = CGSize(width: 600, height: 800)
+        modalPresentationStyle = .popover
+        preferredContentSize = CGSize(width: 400, height: 600)
     }
 
     override func viewDidLoad() {

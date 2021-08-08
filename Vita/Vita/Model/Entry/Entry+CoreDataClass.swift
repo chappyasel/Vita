@@ -24,7 +24,7 @@ class Entry: NSManagedObject, Codable {
     }
     
     var strippedText: String {
-        return text.count > 0 ? text : "Empty entry"
+        return text.count > 0 ? text : "No content"
     }
     
     enum CodingKeys: String, CodingKey {
