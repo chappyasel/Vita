@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,16 +26,16 @@
 		5070D94A26BB212D00AC798F /* VCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D94926BB212D00AC798F /* VCoreData.swift */; };
 		5070D95026BB2E0D00AC798F /* EntryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D94F26BB2E0D00AC798F /* EntryListCell.swift */; };
 		5070D95226BB2EC100AC798F /* EntryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95126BB2EC100AC798F /* EntryListCell.xib */; };
-		5070D95526BB542F00AC798F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D95426BB542F00AC798F /* ProfileViewController.swift */; };
-		5070D95726BB54C500AC798F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95626BB54C500AC798F /* ProfileViewController.xib */; };
+		5070D95526BB542F00AC798F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D95426BB542F00AC798F /* SettingsViewController.swift */; };
+		5070D95726BB54C500AC798F /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95626BB54C500AC798F /* SettingsViewController.xib */; };
 		5070D95926BB5C0F00AC798F /* EntryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95826BB5C0F00AC798F /* EntryListViewController.xib */; };
 		5070D95B26BB5DD600AC798F /* EntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95A26BB5DD600AC798F /* EntryViewController.xib */; };
-		5070D95D26BB5E5700AC798F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D95C26BB5E5700AC798F /* SettingsViewController.swift */; };
-		5070D95F26BB5FF800AC798F /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95E26BB5FF800AC798F /* SettingsViewController.xib */; };
 		5070D96126BB9CED00AC798F /* VSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D96026BB9CED00AC798F /* VSplitViewController.swift */; };
 		50BD329E26BE0D0E009A4480 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BD329D26BE0D0E009A4480 /* Database.swift */; };
 		50BD32A026BE11EE009A4480 /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BD329F26BE11EE009A4480 /* UserDefaultWrapper.swift */; };
 		50D46EEC26BF4E370015B9FB /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D46EEB26BF4E370015B9FB /* StringFormatter.swift */; };
+		50D46EEF26C189FA0015B9FB /* JournalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D46EEE26C189FA0015B9FB /* JournalListViewController.swift */; };
+		50D46EF126C18A0F0015B9FB /* JournalListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D46EF026C18A0F0015B9FB /* JournalListViewController.xib */; };
 		C19E6025A1BD0420235687B6 /* Pods_Vita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818D395F840B700525E7518 /* Pods_Vita.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,16 +63,16 @@
 		5070D94926BB212D00AC798F /* VCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCoreData.swift; sourceTree = "<group>"; };
 		5070D94F26BB2E0D00AC798F /* EntryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListCell.swift; sourceTree = "<group>"; };
 		5070D95126BB2EC100AC798F /* EntryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryListCell.xib; sourceTree = "<group>"; };
-		5070D95426BB542F00AC798F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		5070D95626BB54C500AC798F /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		5070D95426BB542F00AC798F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5070D95626BB54C500AC798F /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		5070D95826BB5C0F00AC798F /* EntryListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryListViewController.xib; sourceTree = "<group>"; };
 		5070D95A26BB5DD600AC798F /* EntryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryViewController.xib; sourceTree = "<group>"; };
-		5070D95C26BB5E5700AC798F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		5070D95E26BB5FF800AC798F /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		5070D96026BB9CED00AC798F /* VSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VSplitViewController.swift; path = Vita/Views/VSplitViewController.swift; sourceTree = SOURCE_ROOT; };
 		50BD329D26BE0D0E009A4480 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		50BD329F26BE11EE009A4480 /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultWrapper.swift; sourceTree = "<group>"; };
 		50D46EEB26BF4E370015B9FB /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
+		50D46EEE26C189FA0015B9FB /* JournalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListViewController.swift; sourceTree = "<group>"; };
+		50D46EF026C18A0F0015B9FB /* JournalListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalListViewController.xib; sourceTree = "<group>"; };
 		5449B1649E8E0D82D2ABDF43 /* Pods-Vita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.debug.xcconfig"; sourceTree = "<group>"; };
 		6164B53D513D8D9E98A76E3C /* Pods-Vita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,9 +155,10 @@
 			isa = PBXGroup;
 			children = (
 				5070D96026BB9CED00AC798F /* VSplitViewController.swift */,
+				50D46EED26C189EF0015B9FB /* Journal List */,
 				5070D94B26BB2DBD00AC798F /* Entry List */,
 				5070D94C26BB2DC700AC798F /* Entry */,
-				5070D94E26BB2DDC00AC798F /* Profile */,
+				5070D94E26BB2DDC00AC798F /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,23 +221,13 @@
 			path = Entry;
 			sourceTree = "<group>";
 		};
-		5070D94D26BB2DD200AC798F /* Settings */ = {
+		5070D94E26BB2DDC00AC798F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				5070D95C26BB5E5700AC798F /* SettingsViewController.swift */,
-				5070D95E26BB5FF800AC798F /* SettingsViewController.xib */,
+				5070D95426BB542F00AC798F /* SettingsViewController.swift */,
+				5070D95626BB54C500AC798F /* SettingsViewController.xib */,
 			);
 			path = Settings;
-			sourceTree = "<group>";
-		};
-		5070D94E26BB2DDC00AC798F /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				5070D95426BB542F00AC798F /* ProfileViewController.swift */,
-				5070D95626BB54C500AC798F /* ProfileViewController.xib */,
-				5070D94D26BB2DD200AC798F /* Settings */,
-			);
-			path = Profile;
 			sourceTree = "<group>";
 		};
 		5070D95326BB2EC700AC798F /* Cell */ = {
@@ -266,6 +257,15 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		50D46EED26C189EF0015B9FB /* Journal List */ = {
+			isa = PBXGroup;
+			children = (
+				50D46EEE26C189FA0015B9FB /* JournalListViewController.swift */,
+				50D46EF026C18A0F0015B9FB /* JournalListViewController.xib */,
+			);
+			path = "Journal List";
+			sourceTree = "<group>";
+		};
 		959AA28900962660270B5D25 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +287,7 @@
 				500E981526B4423100D6F554 /* Sources */,
 				500E981626B4423100D6F554 /* Frameworks */,
 				500E981726B4423100D6F554 /* Resources */,
+				AB2FE8AE6AFA4F63D23EC2FB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -336,10 +337,10 @@
 			files = (
 				500E982C26B4423300D6F554 /* LaunchScreen.storyboard in Resources */,
 				5070D95926BB5C0F00AC798F /* EntryListViewController.xib in Resources */,
+				50D46EF126C18A0F0015B9FB /* JournalListViewController.xib in Resources */,
 				500E982926B4423300D6F554 /* Assets.xcassets in Resources */,
-				5070D95F26BB5FF800AC798F /* SettingsViewController.xib in Resources */,
 				5070D95B26BB5DD600AC798F /* EntryViewController.xib in Resources */,
-				5070D95726BB54C500AC798F /* ProfileViewController.xib in Resources */,
+				5070D95726BB54C500AC798F /* SettingsViewController.xib in Resources */,
 				5070D95226BB2EC100AC798F /* EntryListCell.xib in Resources */,
 				5070D94826BB18E000AC798F /* testData.json in Resources */,
 			);
@@ -387,6 +388,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AB2FE8AE6AFA4F63D23EC2FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Vita/Pods-Vita-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Vita/Pods-Vita-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Vita/Pods-Vita-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -402,11 +420,11 @@
 				5000A39126BECBFC000FC8AD /* EntryInfoViewController.swift in Sources */,
 				50BD329E26BE0D0E009A4480 /* Database.swift in Sources */,
 				50BD32A026BE11EE009A4480 /* UserDefaultWrapper.swift in Sources */,
-				5070D95526BB542F00AC798F /* ProfileViewController.swift in Sources */,
+				5070D95526BB542F00AC798F /* SettingsViewController.swift in Sources */,
+				50D46EEF26C189FA0015B9FB /* JournalListViewController.swift in Sources */,
 				5070D94126BAE7DA00AC798F /* Journal+CoreDataClass.swift in Sources */,
 				5070D95026BB2E0D00AC798F /* EntryListCell.swift in Sources */,
 				5070D94A26BB212D00AC798F /* VCoreData.swift in Sources */,
-				5070D95D26BB5E5700AC798F /* SettingsViewController.swift in Sources */,
 				502BF76626BED0C600B34C14 /* Entry+CoreDataProperties.swift in Sources */,
 				5000A39326BECCF2000FC8AD /* EntryInfoView.swift in Sources */,
 				500E981F26B4423100D6F554 /* SceneDelegate.swift in Sources */,
@@ -558,7 +576,7 @@
 				DEVELOPMENT_TEAM = Q82S7VERUD;
 				INFOPLIST_FILE = "Vita/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.3;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -567,6 +585,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.chappyasel.vita;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -583,7 +602,7 @@
 				DEVELOPMENT_TEAM = Q82S7VERUD;
 				INFOPLIST_FILE = "Vita/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.3;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -592,6 +611,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.chappyasel.vita;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class EntryListCell: UITableViewCell {
+class EntryListCell: SwipeTableViewCell {
 
     var entry: Entry? {
         didSet {

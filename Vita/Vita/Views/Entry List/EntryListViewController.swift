@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import SwipeCellKit
 
 class EntryListViewController: UIViewController {
 
@@ -17,14 +18,8 @@ class EntryListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Vita"
+        navigationItem.title = Database.currentJournal.name
         navigationItem.largeTitleDisplayMode = .automatic
-        let profileAction = #selector(EntryListViewController.profileButtonPressed(_:))
-        navigationItem.leftBarButtonItem =
-            UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"),
-                                           style: .plain,
-                                           target: self,
-                                           action: profileAction)
         let newEntryAction = #selector(EntryListViewController.newEntryButtonPressed(_:))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose,
                                                             target: self,
@@ -42,12 +37,13 @@ class EntryListViewController: UIViewController {
     func configureDataSource() {
         dataSource =
             UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, entry in
-            // swiftlint:disable force_cast
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
-                                                     for: indexPath) as! EntryListCell
-            cell.entry = entry
-            return cell
-        }
+                // swiftlint:disable force_cast
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
+                                                         for: indexPath) as! EntryListCell
+                cell.delegate = self
+                cell.entry = entry
+                return cell
+            }
     }
 
     func initFetchedResultsController() {
@@ -64,12 +60,6 @@ class EntryListViewController: UIViewController {
         } catch {
 
         }
-    }
-
-    @objc func profileButtonPressed(_ sender: UIBarButtonItem) {
-        let vc = ProfileViewController.fromNib()
-        vc.popoverPresentationController?.barButtonItem = sender
-        present(vc, animated: true, completion: nil)
     }
 
     @objc func newEntryButtonPressed(_ sender: UIBarButtonItem) {
@@ -91,35 +81,44 @@ extension EntryListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView,
-                       trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-            // Write action code for the trash
-            let TrashAction = UIContextualAction(style: .normal, title:  "Trash", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-                print("Update action ...")
-                success(true)
-            })
-            TrashAction.backgroundColor = .red
-
-            // Write action code for the Flag
-            let FlagAction = UIContextualAction(style: .normal, title:  "Flag", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-                print("Update action ...")
-                success(true)
-            })
-            FlagAction.backgroundColor = .orange
-
-            // Write action code for the More
-            let MoreAction = UIContextualAction(style: .normal, title:  "More", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-                print("Update action ...")
-                success(true)
-            })
-            MoreAction.backgroundColor = .gray
-
-
-            return UISwipeActionsConfiguration(actions: [TrashAction,FlagAction,MoreAction])
+                   contextMenuConfigurationForRowAt indexPath: IndexPath,
+                   point: CGPoint) -> UIContextMenuConfiguration? {
+        let deleteAction = UIAction(title: "Delete",
+                                    image: UIImage(systemName: "trash"),
+                                    identifier: nil,
+                                    attributes: .destructive) { [weak self] _ in
+            let entry = self?.dataSource.itemIdentifier(for: indexPath)
+            if let entry = entry {
+                // TODO: let rest of UI know about deletion
+                VCoreData.shared.context.delete(entry)
+                VCoreData.shared.save()
+            }
         }
-    
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+            return UIMenu(title: "", children: [deleteAction])
+        }
+    }
+}
+
+extension EntryListViewController: SwipeTableViewCellDelegate {
     func tableView(_ tableView: UITableView,
-                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        return nil
+                   editActionsForRowAt indexPath: IndexPath,
+                   for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        // TODO: This
+        guard orientation == .right else { return nil }
+
+        let deleteAction = SwipeAction(style: .destructive,
+                                       title: "Delete") { [weak self] action, indexPath in
+            let entry = self?.dataSource.itemIdentifier(for: indexPath)
+            if let entry = entry {
+                // TODO: let rest of UI know about deletion
+                VCoreData.shared.context.delete(entry)
+                VCoreData.shared.save()
+            }
+        }
+        deleteAction.image = UIImage(systemName: "trash")
+
+        return [deleteAction]
     }
 }
 

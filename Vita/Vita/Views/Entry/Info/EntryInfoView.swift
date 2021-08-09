@@ -15,34 +15,33 @@ struct EntryInfoView: View {
         GridItem(.flexible())
     ]
     
-    let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d ''YY, HH:mm:ss"
-        return formatter
-    }()
-    
     var body: some View {
         ScrollView {
-            let wordCount = entry.text.components(separatedBy: .whitespacesAndNewlines).count - 1
             LazyVGrid(columns: columns, spacing: 10) {
                 EntryInfoItemView(icon: "square.and.pencil",
                                   title: "Created",
-                                  metric: dateFormatter.string(from: entry.created))
+                                  metric: StringFormatter.string(for: entry.created,
+                                                                 format: .full)
+                                    .replacingOccurrences(of: ", ", with: "\n"))
                 EntryInfoItemView(icon: "clock",
                                   title: "Last Edit",
-                                  metric: dateFormatter.string(from: entry.lastEdit))
+                                  metric: StringFormatter.string(for: entry.lastEdit,
+                                                                 format: .full)
+                                    .replacingOccurrences(of: ", ", with: "\n"))
                 EntryInfoItemView(icon: "eye",
                                   title: "Last View",
-                                  metric: dateFormatter.string(from: entry.lastView))
+                                  metric: StringFormatter.string(for: entry.lastView,
+                                                                 format: .full)
+                                    .replacingOccurrences(of: ", ", with: "\n"))
                 EntryInfoItemView(icon: "hourglass",
                                   title: "Duration",
-                                  metric: "\(entry.duration) sec")
+                                  metric: StringFormatter.string(forDuration: entry.duration))
                 EntryInfoItemView(icon: "text.justifyleft",
                                   title: "Word Count",
-                                  metric: "\(entry.text.count) chars")
+                                  metric: "\(entry.wordCount) words")
                 EntryInfoItemView(icon: "character",
                                   title: "Char Count",
-                                  metric: "\(wordCount) words")
+                                  metric: "\(entry.charCount) chars")
             }
                 .padding(20)
         }
@@ -57,7 +56,7 @@ struct EntryInfoItemView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .foregroundColor(.init(white: 0.9))
+                .foregroundColor(.gray)
             VStack{
                 Image(systemName: icon)
                     .resizable()
@@ -70,9 +69,9 @@ struct EntryInfoItemView: View {
                     .font(.system(size: 17, weight: .medium))
                     .multilineTextAlignment(.center)
             }
-                .padding(12)
+                .padding(10)
         }
-        .frame(height: 150, alignment: .center)
+        .frame(height: 140, alignment: .center)
     }
 }
 
@@ -81,5 +80,10 @@ struct EntryInfoView_Previews: PreviewProvider {
         EntryInfoView(entry: Entry())
             .frame(width: 375, height: 600, alignment: .center)
             .previewLayout(PreviewLayout.sizeThatFits)
+            .colorScheme(.light)
+        EntryInfoView(entry: Entry())
+            .frame(width: 375, height: 600, alignment: .center)
+            .previewLayout(PreviewLayout.sizeThatFits)
+            .colorScheme(.dark)
     }
 }

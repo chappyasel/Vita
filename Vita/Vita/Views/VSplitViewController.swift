@@ -8,16 +8,29 @@
 import UIKit
 
 class VSplitViewController: UISplitViewController {
+    
+    init() {
+        super.init(style: .tripleColumn)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         minimumPrimaryColumnWidth = 250
-        maximumPrimaryColumnWidth = 800
+        maximumPrimaryColumnWidth = 500
+        minimumSupplementaryColumnWidth = 250
+        maximumSupplementaryColumnWidth = 800
         delegate = self
-        let main = UINavigationController()
+        let primary = UINavigationController()
+        let supp = UINavigationController()
         let detail = UINavigationController()
-        main.viewControllers = [EntryListViewController.fromNib()]
+        primary.viewControllers = [JournalListViewController.fromNib()]
+        supp.viewControllers = [EntryListViewController.fromNib()]
         detail.viewControllers = [EntryViewController.fromNib()]
-        viewControllers = [main, detail]
+        viewControllers = [primary, supp, detail]
     }
 }
 

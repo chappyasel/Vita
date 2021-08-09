@@ -9,6 +9,14 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    override func awakeFromNib() {
+        modalPresentationStyle = .popover
+        preferredContentSize = CGSize(width: 400, height: 600)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
 
 extension SettingsViewController {

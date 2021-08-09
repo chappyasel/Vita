@@ -23,6 +23,15 @@ class Entry: NSManagedObject, Codable {
         return Calendar.current.component(.day, from: date)
     }
     
+    var charCount: Int {
+        return text.count
+    }
+    
+    var wordCount: Int {
+        let charSet = CharacterSet.whitespacesAndNewlines.union(.punctuationCharacters)
+        return text.components(separatedBy: charSet).filter { !$0.isEmpty }.count
+    }
+    
     var strippedText: String {
         return text.count > 0 ? text : "No content"
     }

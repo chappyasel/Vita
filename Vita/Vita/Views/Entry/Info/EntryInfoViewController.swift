@@ -30,6 +30,8 @@ class EntryInfoViewController: UIViewController {
         super.viewDidLoad()
         addChild(hostingView)
         view.addSubview(hostingView.view)
+        view.backgroundColor = .clear
+        hostingView.view.backgroundColor = .clear
         hostingView.view.translatesAutoresizingMaskIntoConstraints = false
         hostingView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         hostingView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
