@@ -35,7 +35,6 @@
 		50BD32A026BE11EE009A4480 /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BD329F26BE11EE009A4480 /* UserDefaultWrapper.swift */; };
 		50D46EEC26BF4E370015B9FB /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D46EEB26BF4E370015B9FB /* StringFormatter.swift */; };
 		50D46EEF26C189FA0015B9FB /* JournalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D46EEE26C189FA0015B9FB /* JournalListViewController.swift */; };
-		50D46EF126C18A0F0015B9FB /* JournalListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D46EF026C18A0F0015B9FB /* JournalListViewController.xib */; };
 		C19E6025A1BD0420235687B6 /* Pods_Vita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818D395F840B700525E7518 /* Pods_Vita.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +71,6 @@
 		50BD329F26BE11EE009A4480 /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultWrapper.swift; sourceTree = "<group>"; };
 		50D46EEB26BF4E370015B9FB /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
 		50D46EEE26C189FA0015B9FB /* JournalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListViewController.swift; sourceTree = "<group>"; };
-		50D46EF026C18A0F0015B9FB /* JournalListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalListViewController.xib; sourceTree = "<group>"; };
 		5449B1649E8E0D82D2ABDF43 /* Pods-Vita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.debug.xcconfig"; sourceTree = "<group>"; };
 		6164B53D513D8D9E98A76E3C /* Pods-Vita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -261,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				50D46EEE26C189FA0015B9FB /* JournalListViewController.swift */,
-				50D46EF026C18A0F0015B9FB /* JournalListViewController.xib */,
 			);
 			path = "Journal List";
 			sourceTree = "<group>";
@@ -337,7 +334,6 @@
 			files = (
 				500E982C26B4423300D6F554 /* LaunchScreen.storyboard in Resources */,
 				5070D95926BB5C0F00AC798F /* EntryListViewController.xib in Resources */,
-				50D46EF126C18A0F0015B9FB /* JournalListViewController.xib in Resources */,
 				500E982926B4423300D6F554 /* Assets.xcassets in Resources */,
 				5070D95B26BB5DD600AC798F /* EntryViewController.xib in Resources */,
 				5070D95726BB54C500AC798F /* SettingsViewController.xib in Resources */,

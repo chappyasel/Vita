@@ -33,7 +33,10 @@ class Entry: NSManagedObject, Codable {
     }
     
     var strippedText: String {
-        return text.count > 0 ? text : "No content"
+        guard text.count > 0 else { return "No content" }
+        return text
+            .trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            .replacingOccurrences(of: "\n", with: " ")
     }
     
     enum CodingKeys: String, CodingKey {
@@ -57,7 +60,6 @@ class Entry: NSManagedObject, Codable {
         setPrimitiveValue(Date(), forKey: "lastView")
         setPrimitiveValue(0.0, forKey: "duration")
         setPrimitiveValue("", forKey: "text")
-        setPrimitiveValue(Database.currentJournal, forKey: "journal")
     }
     
     convenience init() {

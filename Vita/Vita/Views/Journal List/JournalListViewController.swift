@@ -10,9 +10,9 @@ import CoreData
 
 class JournalListViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    private var collectionView: UICollectionView!
     
-    private var dataSource: UITableViewDiffableDataSource<Int, Journal>!
+    private var dataSource: UICollectionViewDiffableDataSource<Int, Journal>!
     private var fetchedResultsController: NSFetchedResultsController<Journal>!
     
     override func viewDidLoad() {
@@ -25,24 +25,46 @@ class JournalListViewController: UIViewController {
                                            style: .plain,
                                            target: self,
                                            action: settingsAction)
-        tableView.delegate = self
-        tableView.alwaysBounceVertical = true
-        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 90
+        configureCollectionView()
         configureDataSource()
         initFetchedResultsController()
     }
+    
+    private func configureCollectionView() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.backgroundColor = .systemBackground
+        collectionView.delegate = self
+        view.addSubview(collectionView)
+    }
+    
+    private func createLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout() { (sectionIndex, layoutEnvironment) in
+            var configuration = UICollectionLayoutListConfiguration(appearance: .sidebar)
+            configuration.showsSeparators = false
+            configuration.headerMode = .firstItemInSection
+            let section = NSCollectionLayoutSection.list(using: configuration,
+                                                         layoutEnvironment: layoutEnvironment)
+            return section
+        }
+        return layout
+    }
 
     func configureDataSource() {
-        dataSource =
-            UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, journal in
-                // swiftlint:disable force_cast
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
-                                                         for: indexPath)
-                cell.textLabel?.text = journal.name
-                return cell
-            }
+        let row = UICollectionView.CellRegistration<UICollectionViewListCell, Journal> {
+                cell, indexPath, journal in
+            var config = UIListContentConfiguration.sidebarSubtitleCell()
+            config.text = journal.name
+            config.secondaryText = "\(journal.entries.count) entries"
+            config.image = UIImage(systemName: "text.book.closed")
+            cell.contentConfiguration = config
+        }
+        
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) {
+                collectionView, indexPath, journal in
+            return collectionView
+                .dequeueConfiguredReusableCell(using: row, for: indexPath, item: journal)
+        }
     }
 
     func initFetchedResultsController() {
@@ -61,18 +83,20 @@ class JournalListViewController: UIViewController {
     }
     
     @objc func settingsButtonPressed(_ sender: UIBarButtonItem) {
-        
+        let vc = SettingsViewController.fromNib()
+        vc.popoverPresentationController?.barButtonItem = sender
+        present(vc, animated: true, completion: nil)
     }
 }
 
-extension JournalListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension JournalListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
     
-    func tableView(_ tableView: UITableView,
-                   contextMenuConfigurationForRowAt indexPath: IndexPath,
-                   point: CGPoint) -> UIContextMenuConfiguration? {
+    func collectionView(_ collectionView: UICollectionView,
+                        contextMenuConfigurationForItemAt indexPath: IndexPath,
+                        point: CGPoint) -> UIContextMenuConfiguration? {
         let deleteAction = UIAction(title: "Delete",
                                     image: UIImage(systemName: "trash"),
                                     identifier: nil,
@@ -97,14 +121,5 @@ extension JournalListViewController: NSFetchedResultsControllerDelegate {
         diffableDataSourceSnapshot.appendSections([0])
         diffableDataSourceSnapshot.appendItems(fetchedResultsController.fetchedObjects ?? [])
         dataSource?.apply(diffableDataSourceSnapshot, animatingDifferences: view.window != nil)
-    }
-}
-
-extension JournalListViewController {
-    static func fromNib() -> JournalListViewController {
-        // swiftlint:disable force_cast
-        return Bundle.main.loadNibNamed(String(describing: JournalListViewController.self),
-                                        owner: self,
-                                        options: nil)?.first as! JournalListViewController
     }
 }

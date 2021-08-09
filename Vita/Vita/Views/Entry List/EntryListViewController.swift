@@ -63,14 +63,15 @@ class EntryListViewController: UIViewController {
     }
 
     @objc func newEntryButtonPressed(_ sender: UIBarButtonItem) {
-        present(entry: Entry())
+        let entry = Entry()
+        entry.journal = Database.currentJournal
+        present(entry: entry)
     }
     
     func present(entry: Entry?) {
         let vc = EntryViewController.fromNib()
         vc.entry = entry
-        let nc = UINavigationController()
-        nc.viewControllers = [vc]
+        let nc = UINavigationController(rootViewController: vc)
         showDetailViewController(nc, sender: self)
     }
 }

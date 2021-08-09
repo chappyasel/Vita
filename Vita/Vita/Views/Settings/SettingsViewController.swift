@@ -12,6 +12,7 @@ class SettingsViewController: UIViewController {
     override func awakeFromNib() {
         modalPresentationStyle = .popover
         preferredContentSize = CGSize(width: 400, height: 600)
+        view.backgroundColor = .clear
     }
 
     override func viewDidLoad() {

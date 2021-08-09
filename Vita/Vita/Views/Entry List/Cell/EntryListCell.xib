@@ -42,8 +42,8 @@
                             <constraint firstAttribute="height" constant="65" id="zTd-bO-noU"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No entry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grG-Sj-XFQ">
-                        <rect key="frame" x="95" y="35" width="260" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No entry" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grG-Sj-XFQ">
+                        <rect key="frame" x="95" y="12.5" width="260" height="65"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                         <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                 <constraints>
                     <constraint firstItem="wqp-J9-3ur" firstAttribute="leading" secondItem="Nsc-Wa-Slj" secondAttribute="leading" constant="15" id="Fuj-NL-UAA"/>
                     <constraint firstItem="wqp-J9-3ur" firstAttribute="centerY" secondItem="Nsc-Wa-Slj" secondAttribute="centerY" id="VEM-ef-Iac"/>
-                    <constraint firstItem="grG-Sj-XFQ" firstAttribute="height" secondItem="wqp-J9-3ur" secondAttribute="height" multiplier="0.315385" id="Wwl-2N-IX8"/>
+                    <constraint firstItem="grG-Sj-XFQ" firstAttribute="height" secondItem="wqp-J9-3ur" secondAttribute="height" id="Wwl-2N-IX8"/>
                     <constraint firstItem="grG-Sj-XFQ" firstAttribute="centerY" secondItem="Nsc-Wa-Slj" secondAttribute="centerY" id="s0I-KE-XfK"/>
                     <constraint firstItem="grG-Sj-XFQ" firstAttribute="leading" secondItem="wqp-J9-3ur" secondAttribute="trailing" constant="20" id="wgN-Es-fIv"/>
                     <constraint firstAttribute="trailing" secondItem="grG-Sj-XFQ" secondAttribute="trailing" constant="20" id="yaf-uO-Pxy"/>

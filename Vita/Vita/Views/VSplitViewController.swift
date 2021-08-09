@@ -19,18 +19,16 @@ class VSplitViewController: UISplitViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        primaryBackgroundStyle = .sidebar
+        preferredDisplayMode = .twoBesideSecondary
         minimumPrimaryColumnWidth = 250
         maximumPrimaryColumnWidth = 500
         minimumSupplementaryColumnWidth = 250
         maximumSupplementaryColumnWidth = 800
         delegate = self
-        let primary = UINavigationController()
-        let supp = UINavigationController()
-        let detail = UINavigationController()
-        primary.viewControllers = [JournalListViewController.fromNib()]
-        supp.viewControllers = [EntryListViewController.fromNib()]
-        detail.viewControllers = [EntryViewController.fromNib()]
-        viewControllers = [primary, supp, detail]
+        setViewController(JournalListViewController(), for: .primary)
+        setViewController(EntryListViewController.fromNib(), for: .supplementary)
+        setViewController(EntryViewController.fromNib(), for: .secondary)
     }
 }
 
