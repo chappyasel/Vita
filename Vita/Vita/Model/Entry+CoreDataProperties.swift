@@ -25,4 +25,7 @@ extension Entry {
     @NSManaged public var text: String
     @NSManaged public var journal: Journal?
 
+    @objc var sectionID: String? {
+        return StringFormatter.string(for: date, format: .month)
+    }
 }

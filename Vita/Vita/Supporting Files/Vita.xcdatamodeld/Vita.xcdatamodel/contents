@@ -7,6 +7,7 @@
         <attribute name="id" attributeType="String" defaultValueString=""/>
         <attribute name="lastEdit" attributeType="Date" defaultDateTimeInterval="649310400" usesScalarValueType="NO"/>
         <attribute name="lastView" attributeType="Date" defaultDateTimeInterval="649310400" usesScalarValueType="NO"/>
+        <attribute name="sectionID" optional="YES" transient="YES" attributeType="String"/>
         <attribute name="text" attributeType="String" defaultValueString=""/>
         <relationship name="journal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Journal" inverseName="entries" inverseEntity="Journal"/>
     </entity>
@@ -19,7 +20,7 @@
         <relationship name="entries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Entry" inverseName="journal" inverseEntity="Entry"/>
     </entity>
     <elements>
-        <element name="Entry" positionX="-54" positionY="27" width="128" height="149"/>
+        <element name="Entry" positionX="-54" positionY="27" width="128" height="164"/>
         <element name="Journal" positionX="-63" positionY="-18" width="128" height="119"/>
     </elements>
 </model>

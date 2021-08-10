@@ -164,7 +164,7 @@ class StringFormatter: VStringFormatter {
     
     // MARK: - Private helpers
     
-    static func string(forSeconds seconds: Double) -> String {
+    private static func string(forSeconds seconds: Double) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.minimumIntegerDigits = 2
@@ -172,7 +172,7 @@ class StringFormatter: VStringFormatter {
         return formatter.string(from: NSNumber(value: seconds))!
     }
     
-    static func format(value: Double) -> String {
+    private static func format(value: Double) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.roundingIncrement = 0.001
@@ -180,7 +180,7 @@ class StringFormatter: VStringFormatter {
         return formatter.string(from: NSNumber(value: value))!
     }
 
-    static func stringAndMult(for value: Double) -> (String, String) {
+    private static func stringAndMult(for value: Double) -> (String, String) {
         if value < 1_000 { // 999
             return (format(value: value), "")
         }
@@ -205,7 +205,7 @@ class StringFormatter: VStringFormatter {
         return (String(format: "%.1f", value / 1000000000.0), "b") // 99.9b
     }
 
-    static func suffix(for date: Date) -> String {
+    private static func suffix(for date: Date) -> String {
         let dayOfMonth = Calendar.current.component(.day, from: date)
         switch (dayOfMonth) {
             case 1, 21, 31:

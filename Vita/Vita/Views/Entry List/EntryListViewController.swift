@@ -10,10 +10,9 @@ import CoreData
 import SwipeCellKit
 
 class EntryListViewController: UIViewController {
+    private static let cellReuseID = "EntryCell"
 
     @IBOutlet private weak var tableView: UITableView!
-
-    private var dataSource: UITableViewDiffableDataSource<Int, Entry>!
     private var fetchedResultsController: NSFetchedResultsController<Entry>!
 
     override func viewDidLoad() {
@@ -25,41 +24,27 @@ class EntryListViewController: UIViewController {
                                                             target: self,
                                                             action: newEntryAction)
         tableView.delegate = self
+        tableView.dataSource = self
         tableView.alwaysBounceVertical = true
-        tableView.register(EntryListCell.nib(), forCellReuseIdentifier: "Cell")
+        tableView.register(EntryListCell.nib(),
+                           forCellReuseIdentifier: EntryListViewController.cellReuseID)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 90
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 100, bottom: 0, right: 25)
-        configureDataSource()
-        initFetchedResultsController()
+        loadFetchedResultsController()
     }
 
-    func configureDataSource() {
-        dataSource =
-            UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, entry in
-                // swiftlint:disable force_cast
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
-                                                         for: indexPath) as! EntryListCell
-                cell.delegate = self
-                cell.entry = entry
-                return cell
-            }
-    }
-
-    func initFetchedResultsController() {
+    func loadFetchedResultsController() {
         let fetchRequest: NSFetchRequest<Entry> = Entry.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "journal = %@", Database.currentJournal)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+        fetchRequest.fetchBatchSize = 20
         fetchedResultsController =
             NSFetchedResultsController(fetchRequest: fetchRequest,
                                        managedObjectContext: VCoreData.shared.context,
-                                       sectionNameKeyPath: nil, cacheName: nil)
+                                       sectionNameKeyPath: "sectionID", cacheName: "Root")
         fetchedResultsController.delegate = self
-        do {
-            try fetchedResultsController.performFetch()
-        } catch {
-
-        }
+        try! fetchedResultsController.performFetch()
     }
 
     @objc func newEntryButtonPressed(_ sender: UIBarButtonItem) {
@@ -76,9 +61,44 @@ class EntryListViewController: UIViewController {
     }
 }
 
-extension EntryListViewController: UITableViewDelegate {
+extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return fetchedResultsController.sections?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionInfo = fetchedResultsController.sections?[section]
+        let titleLabel = UILabel()
+        titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        titleLabel.backgroundColor = .systemBackground
+        titleLabel.text = sectionInfo?.name
+        return titleLabel
+    }
+    
+    func configure(cell: EntryListCell, at indexPath: IndexPath) {
+        cell.entry = fetchedResultsController.object(at: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: EntryListViewController.cellReuseID, for: indexPath
+        ) as! EntryListCell
+        cell.delegate = self
+        configure(cell: cell, at: indexPath)
+        return cell
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        present(entry: dataSource.itemIdentifier(for: indexPath))
+        present(entry: fetchedResultsController.object(at: indexPath))
     }
     
     func tableView(_ tableView: UITableView,
@@ -88,7 +108,7 @@ extension EntryListViewController: UITableViewDelegate {
                                     image: UIImage(systemName: "trash"),
                                     identifier: nil,
                                     attributes: .destructive) { [weak self] _ in
-            let entry = self?.dataSource.itemIdentifier(for: indexPath)
+            let entry = self?.fetchedResultsController.object(at: indexPath)
             if let entry = entry {
                 // TODO: let rest of UI know about deletion
                 VCoreData.shared.context.delete(entry)
@@ -110,7 +130,7 @@ extension EntryListViewController: SwipeTableViewCellDelegate {
 
         let deleteAction = SwipeAction(style: .destructive,
                                        title: "Delete") { [weak self] action, indexPath in
-            let entry = self?.dataSource.itemIdentifier(for: indexPath)
+            let entry = self?.fetchedResultsController.object(at: indexPath)
             if let entry = entry {
                 // TODO: let rest of UI know about deletion
                 VCoreData.shared.context.delete(entry)
@@ -124,12 +144,34 @@ extension EntryListViewController: SwipeTableViewCellDelegate {
 }
 
 extension EntryListViewController: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(
+            _ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
-                    didChangeContentWith snapshot: NSDiffableDataSourceSnapshotReference) {
-        var diffableDataSourceSnapshot = NSDiffableDataSourceSnapshot<Int, Entry>()
-        diffableDataSourceSnapshot.appendSections([0])
-        diffableDataSourceSnapshot.appendItems(fetchedResultsController.fetchedObjects ?? [])
-        dataSource?.apply(diffableDataSourceSnapshot, animatingDifferences: view.window != nil)
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            tableView.insertRows(at: [newIndexPath!], with: .fade)
+        case .delete:
+            tableView.deleteRows(at: [indexPath!], with: .fade)
+        case .move:
+            tableView.moveRow(at: indexPath!, to: newIndexPath!)
+        case .update:
+            guard let cell = tableView.cellForRow(at: newIndexPath!) else { break }
+            configure(cell: cell as! EntryListCell, at: newIndexPath!)
+        @unknown default:
+            break
+        }
+    }
+    
+    func controllerDidChangeContent(
+            _ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
     }
 }
 

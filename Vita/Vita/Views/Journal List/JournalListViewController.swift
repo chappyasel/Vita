@@ -75,11 +75,7 @@ class JournalListViewController: UIViewController {
                                        managedObjectContext: VCoreData.shared.context,
                                        sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
-        do {
-            try fetchedResultsController.performFetch()
-        } catch {
-
-        }
+        try! fetchedResultsController.performFetch()
     }
     
     @objc func settingsButtonPressed(_ sender: UIBarButtonItem) {

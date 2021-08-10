@@ -28,8 +28,7 @@ class Entry: NSManagedObject, Codable {
     }
     
     var wordCount: Int {
-        let charSet = CharacterSet.whitespacesAndNewlines.union(.punctuationCharacters)
-        return text.components(separatedBy: charSet).filter { !$0.isEmpty }.count
+        return text.components(separatedBy: .whitespacesAndNewlines).filter { !$0.isEmpty }.count
     }
     
     var strippedText: String {
