@@ -79,7 +79,7 @@ class JournalListViewController: UIViewController {
     }
     
     @objc func settingsButtonPressed(_ sender: UIBarButtonItem) {
-        let vc = SettingsViewController.fromNib()
+        let vc = SettingsViewController()
         vc.popoverPresentationController?.barButtonItem = sender
         present(vc, animated: true, completion: nil)
     }

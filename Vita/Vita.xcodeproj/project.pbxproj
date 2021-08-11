@@ -27,7 +27,6 @@
 		5070D95026BB2E0D00AC798F /* EntryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D94F26BB2E0D00AC798F /* EntryListCell.swift */; };
 		5070D95226BB2EC100AC798F /* EntryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95126BB2EC100AC798F /* EntryListCell.xib */; };
 		5070D95526BB542F00AC798F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D95426BB542F00AC798F /* SettingsViewController.swift */; };
-		5070D95726BB54C500AC798F /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95626BB54C500AC798F /* SettingsViewController.xib */; };
 		5070D95926BB5C0F00AC798F /* EntryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95826BB5C0F00AC798F /* EntryListViewController.xib */; };
 		5070D95B26BB5DD600AC798F /* EntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5070D95A26BB5DD600AC798F /* EntryViewController.xib */; };
 		5070D96126BB9CED00AC798F /* VSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070D96026BB9CED00AC798F /* VSplitViewController.swift */; };
@@ -64,7 +63,6 @@
 		5070D94F26BB2E0D00AC798F /* EntryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListCell.swift; sourceTree = "<group>"; };
 		5070D95126BB2EC100AC798F /* EntryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryListCell.xib; sourceTree = "<group>"; };
 		5070D95426BB542F00AC798F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		5070D95626BB54C500AC798F /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		5070D95826BB5C0F00AC798F /* EntryListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryListViewController.xib; sourceTree = "<group>"; };
 		5070D95A26BB5DD600AC798F /* EntryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryViewController.xib; sourceTree = "<group>"; };
 		5070D96026BB9CED00AC798F /* VSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VSplitViewController.swift; path = Vita/Views/VSplitViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -225,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				5070D95426BB542F00AC798F /* SettingsViewController.swift */,
-				5070D95626BB54C500AC798F /* SettingsViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -339,7 +336,6 @@
 				5070D95926BB5C0F00AC798F /* EntryListViewController.xib in Resources */,
 				500E982926B4423300D6F554 /* Assets.xcassets in Resources */,
 				5070D95B26BB5DD600AC798F /* EntryViewController.xib in Resources */,
-				5070D95726BB54C500AC798F /* SettingsViewController.xib in Resources */,
 				5070D95226BB2EC100AC798F /* EntryListCell.xib in Resources */,
 				5070D94826BB18E000AC798F /* testData.json in Resources */,
 			);
@@ -573,6 +569,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Vita/Supporting Files/Vita.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q82S7VERUD;
 				INFOPLIST_FILE = "Vita/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -599,6 +596,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Vita/Supporting Files/Vita.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q82S7VERUD;
 				INFOPLIST_FILE = "Vita/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
