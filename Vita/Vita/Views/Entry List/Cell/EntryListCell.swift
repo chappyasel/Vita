@@ -26,6 +26,7 @@ class EntryListCell: SwipeTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        dateView.backgroundColor = .secondarySystemBackground
         dateView.layer.cornerRadius = 16
     }
 }

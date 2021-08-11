@@ -67,7 +67,12 @@ class EntryViewController: UIViewController {
     @objc func infoButtonPressed(_ sender: UIBarButtonItem) {
         let vc = EntryInfoViewController(entry: entry!)
         vc.popoverPresentationController?.barButtonItem = sender
+        #if targetEnvironment(macCatalyst)
         present(vc, animated: true, completion: nil)
+        #else
+        let nc = UINavigationController(rootViewController: vc)
+        present(nc, animated: true, completion: nil)
+        #endif
     }
 
     func saveEntry() {

@@ -28,14 +28,31 @@ class EntryInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        #if targetEnvironment(macCatalyst)
+        view.backgroundColor = .clear
+        #else
+        view.backgroundColor = .systemBackground
+        navigationItem.title = "Entry Info"
+        navigationItem.largeTitleDisplayMode = .automatic
+        navigationController?.navigationBar.prefersLargeTitles = true
+        extendedLayoutIncludesOpaqueBars = true
+        let doneAction = #selector(EntryInfoViewController.doneButtonPressed(_:))
+        navigationItem.rightBarButtonItem =
+            UIBarButtonItem(title: "Done", style: .done, target: self, action: doneAction)
+        #endif
+        
         addChild(hostingView)
         view.addSubview(hostingView.view)
-        view.backgroundColor = .clear
         hostingView.view.backgroundColor = .clear
         hostingView.view.translatesAutoresizingMaskIntoConstraints = false
         hostingView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         hostingView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         hostingView.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         hostingView.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    @objc func doneButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
 }

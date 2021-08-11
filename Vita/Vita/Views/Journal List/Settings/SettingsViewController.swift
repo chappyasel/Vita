@@ -14,8 +14,6 @@ class SettingsViewController: FormViewController {
         super.init(style: .insetGrouped)
         modalPresentationStyle = .popover
         preferredContentSize = CGSize(width: 400, height: 600)
-        view.backgroundColor = .clear
-        tableView.backgroundColor = .clear
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,14 +23,27 @@ class SettingsViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SwitchRow.defaultCellSetup = { cell, row in
-            cell.tintColor = .lightText
+        #if targetEnvironment(macCatalyst)
+        view.backgroundColor = .clear
+        tableView.backgroundColor = .clear
+        #else
+        navigationItem.title = "Settings"
+        navigationItem.largeTitleDisplayMode = .automatic
+        navigationController?.navigationBar.prefersLargeTitles = true
+        extendedLayoutIncludesOpaqueBars = true
+        let doneAction = #selector(SettingsViewController.doneButtonPressed(_:))
+        navigationItem.rightBarButtonItem =
+            UIBarButtonItem(title: "Done", style: .done, target: self, action: doneAction)
+        #endif
+        
+        SwitchRow.defaultCellSetup = { [unowned self] cell, row in
             cell.textLabel?.font = .systemFont(ofSize: 15, weight: .medium)
+            cell.switchControl.onTintColor = view.window?.tintColor
         }
         
         ButtonRow.defaultCellSetup = { cell, row in
-            cell.tintColor = .lightText
             cell.textLabel?.font = .systemFont(ofSize: 15, weight: .medium)
+            cell.tintColor = .label
         }
         
         ButtonRow.defaultCellUpdate = { cell, row in
@@ -123,5 +134,9 @@ class SettingsViewController: FormViewController {
             .cellUpdate { cell, row in
                 cell.textLabel?.textAlignment = .center
             }
+    }
+    
+    @objc func doneButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
 }

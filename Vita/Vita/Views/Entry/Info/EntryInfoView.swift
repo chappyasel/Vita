@@ -56,7 +56,7 @@ struct EntryInfoItemView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .foregroundColor(.gray)
+                .foregroundColor(Color(.secondarySystemBackground))
             VStack{
                 Image(systemName: icon)
                     .resizable()

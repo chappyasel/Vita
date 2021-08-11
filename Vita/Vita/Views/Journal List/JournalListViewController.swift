@@ -81,7 +81,12 @@ class JournalListViewController: UIViewController {
     @objc func settingsButtonPressed(_ sender: UIBarButtonItem) {
         let vc = SettingsViewController()
         vc.popoverPresentationController?.barButtonItem = sender
+        #if targetEnvironment(macCatalyst)
         present(vc, animated: true, completion: nil)
+        #else
+        let nc = UINavigationController(rootViewController: vc)
+        present(nc, animated: true, completion: nil)
+        #endif
     }
 }
 

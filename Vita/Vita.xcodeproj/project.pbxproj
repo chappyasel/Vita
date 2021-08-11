@@ -156,7 +156,6 @@
 				50D46EED26C189EF0015B9FB /* Journal List */,
 				5070D94B26BB2DBD00AC798F /* Entry List */,
 				5070D94C26BB2DC700AC798F /* Entry */,
-				5070D94E26BB2DDC00AC798F /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				50D46EEE26C189FA0015B9FB /* JournalListViewController.swift */,
+				5070D94E26BB2DDC00AC798F /* Settings */,
 			);
 			path = "Journal List";
 			sourceTree = "<group>";
