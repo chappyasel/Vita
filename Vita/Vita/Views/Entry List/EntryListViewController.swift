@@ -112,7 +112,7 @@ extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
             if let entry = entry {
                 // TODO: let rest of UI know about deletion
                 VCoreData.shared.context.delete(entry)
-                VCoreData.shared.save()
+                VCoreData.shared.save(author: "entryListDelete")
             }
         }
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
@@ -134,7 +134,7 @@ extension EntryListViewController: SwipeTableViewCellDelegate {
             if let entry = entry {
                 // TODO: let rest of UI know about deletion
                 VCoreData.shared.context.delete(entry)
-                VCoreData.shared.save()
+                VCoreData.shared.save(author: "entryListDelete")
             }
         }
         deleteAction.image = UIImage(systemName: "trash")

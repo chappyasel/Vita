@@ -35,6 +35,7 @@
 		50BD32A026BE11EE009A4480 /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BD329F26BE11EE009A4480 /* UserDefaultWrapper.swift */; };
 		50D46EEC26BF4E370015B9FB /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D46EEB26BF4E370015B9FB /* StringFormatter.swift */; };
 		50D46EEF26C189FA0015B9FB /* JournalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D46EEE26C189FA0015B9FB /* JournalListViewController.swift */; };
+		50D46EF326C3F26D0015B9FB /* VMergePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D46EF226C3F26D0015B9FB /* VMergePolicy.swift */; };
 		C19E6025A1BD0420235687B6 /* Pods_Vita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818D395F840B700525E7518 /* Pods_Vita.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		50BD329F26BE11EE009A4480 /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultWrapper.swift; sourceTree = "<group>"; };
 		50D46EEB26BF4E370015B9FB /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
 		50D46EEE26C189FA0015B9FB /* JournalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListViewController.swift; sourceTree = "<group>"; };
+		50D46EF226C3F26D0015B9FB /* VMergePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMergePolicy.swift; sourceTree = "<group>"; };
 		5449B1649E8E0D82D2ABDF43 /* Pods-Vita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.debug.xcconfig"; sourceTree = "<group>"; };
 		6164B53D513D8D9E98A76E3C /* Pods-Vita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vita.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vita/Pods-Vita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				5070D94926BB212D00AC798F /* VCoreData.swift */,
+				50D46EF226C3F26D0015B9FB /* VMergePolicy.swift */,
 				50BD329F26BE11EE009A4480 /* UserDefaultWrapper.swift */,
 				5070D94326BAE94B00AC798F /* Serialization.swift */,
 			);
@@ -425,6 +428,7 @@
 				5000A39326BECCF2000FC8AD /* EntryInfoView.swift in Sources */,
 				500E981F26B4423100D6F554 /* SceneDelegate.swift in Sources */,
 				50D46EEC26BF4E370015B9FB /* StringFormatter.swift in Sources */,
+				50D46EF326C3F26D0015B9FB /* VMergePolicy.swift in Sources */,
 				5070D96126BB9CED00AC798F /* VSplitViewController.swift in Sources */,
 				502BF76426BED0C600B34C14 /* Journal+CoreDataProperties.swift in Sources */,
 				5070D93C26BADCD300AC798F /* EntryListViewController.swift in Sources */,

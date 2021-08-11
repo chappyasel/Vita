@@ -73,7 +73,7 @@ class EntryViewController: UIViewController {
     func saveEntry() {
         guard let entry = entry else { return }
         entry.text = textView.text
-        VCoreData.shared.save()
+        VCoreData.shared.save(author: "entryEdit")
     }
 }
 

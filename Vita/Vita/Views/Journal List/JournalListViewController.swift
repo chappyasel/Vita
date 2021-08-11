@@ -101,7 +101,7 @@ extension JournalListViewController: UICollectionViewDelegate {
             if let journal = journal {
                 // TODO: let rest of UI know about deletion
                 VCoreData.shared.context.delete(journal)
-                VCoreData.shared.save()
+                VCoreData.shared.save(author: "journalListDelete")
             }
         }
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in

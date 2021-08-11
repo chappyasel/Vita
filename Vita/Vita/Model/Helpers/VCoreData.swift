@@ -13,6 +13,11 @@ class VCoreData {
 
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
         let container = NSPersistentCloudKitContainer(name: "Vita")
+        let description = container.persistentStoreDescriptions.first
+        description?.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+        description?.setOption(true as NSNumber,
+                               forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        
         container.loadPersistentStores(completionHandler: { _, error in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -23,22 +28,27 @@ class VCoreData {
             }
         })
         
-        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        container.viewContext.name = "viewContext"
+        container.viewContext.mergePolicy =
+            VMergePolicy(merge: .mergeByPropertyObjectTrumpMergePolicyType)
         container.viewContext.automaticallyMergesChangesFromParent = true
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(storeRemoteChange(_:)),
-                                               name: .NSPersistentStoreRemoteChange,
-                                               object: container.persistentStoreCoordinator)
+        
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(storeRemoteChange(_:)),
+//                                               name: .NSPersistentStoreRemoteChange,
+//                                               object: container.persistentStoreCoordinator)
         
         return container
     }()
 
     var context: NSManagedObjectContext { return persistentContainer.viewContext }
 
-    func save() {
+    func save(author: String? = nil) {
         if context.hasChanges {
             do {
+                context.transactionAuthor = author
                 try context.save()
+                context.transactionAuthor = nil
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate.
@@ -50,9 +60,9 @@ class VCoreData {
         }
     }
     
-    @objc func storeRemoteChange(_ notification: Notification) {
-        print("STORE CHANGE")
-    }
+//    @objc func storeRemoteChange(_ notification: Notification) {
+//        print("STORE CHANGE: \(notification.object)")
+//    }
 
     // TODO: remove test data code
     func loadTestData() {

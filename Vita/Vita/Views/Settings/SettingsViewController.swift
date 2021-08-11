@@ -18,6 +18,13 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // TODO:
+    // 1. iCloud Sync toggle
+    // 2. Dark mode / use device settings
+    // 3. Import / export all data
+    // 4. Contact us
+    // 5. Share / rate
 }
 
 extension SettingsViewController {
