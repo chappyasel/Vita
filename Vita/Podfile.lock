@@ -1,5 +1,5 @@
 PODS:
-  - Eureka (5.3.3)
+  - Eureka (5.3.4)
   - SwipeCellKit (2.7.1)
 
 DEPENDENCIES:
@@ -7,14 +7,14 @@ DEPENDENCIES:
   - SwipeCellKit
 
 SPEC REPOS:
-  trunk:
+  https://github.com/cocoapods/specs.git:
     - Eureka
     - SwipeCellKit
 
 SPEC CHECKSUMS:
-  Eureka: e6d720290c56bb23333ad1a0e020b2a98a0e9a43
+  Eureka: 60cf058f86a8fb3ed26165ba5292b9850361b0a6
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
 PODFILE CHECKSUM: 72f42862e7be4fed1a1902457c8207aad63805cf
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.5.3
